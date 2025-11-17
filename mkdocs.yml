@@ -1,0 +1,8 @@
+site_name: GenIR Reading
+site_url: https://genir-notes.github.io
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
