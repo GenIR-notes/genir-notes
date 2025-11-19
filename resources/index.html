@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#resources-for-getting-started-with-generative-ir" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -337,6 +342,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -354,6 +379,141 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-is-generative-ir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 1. What is Generative IR?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tutorials-surveys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 2. Tutorials &amp; Surveys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-starter-code-repositories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 3. Starter Code Repositories
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-datasets-for-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 4. Datasets for Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔹 4. Datasets for Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Retrieval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multimodal-retrieval" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multimodal Retrieval
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-teaching-prototyping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Teaching / Prototyping
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-beginner-start-reading-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 5. Beginner start reading recommendations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tools-practical-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 6. Tools &amp; Practical Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-extra-joining-the-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔹 7. Extra: Joining the Community
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -721,9 +881,111 @@
 
 
 
-  <h1>Resources</h1>
-
-
+<h1 id="resources-for-getting-started-with-generative-ir">Resources for Getting Started with Generative IR</h1>
+<p>This page provides a curated set of <strong>entry-level resources</strong> for students and researchers who want to quickly understand and start working on <strong>Generative Information Retrieval (GenIR)</strong>, <strong>Generative Recommendation (GenRec)</strong>, and <strong>Multimodal Generative Retrieval</strong>.</p>
+<p>It includes tutorials, starter code, datasets, beginner-friendly papers, and tools.</p>
+<hr />
+<h2 id="1-what-is-generative-ir">🔹 1. What is Generative IR?</h2>
+<p>Generative IR treats retrieval as a <strong>sequence generation problem</strong>.<br />
+Instead of scoring documents (dense/sparse retrieval), a model <strong>directly generates document identifiers (DocIDs)</strong> conditioned on a query.</p>
+<p>This paradigm enables:
+- flexible reasoning<br />
+- multimodal integration<br />
+- unifying retrieval with generation<br />
+- direct indexing via generative models</p>
+<hr />
+<h2 id="2-tutorials-surveys">🔹 2. Tutorials &amp; Surveys</h2>
+<p><strong>Our tutorial (recommended starting point):</strong><br />
+👉 <a href="your-link-here">GenIR Tutorial</a></p>
+<p><strong>Other helpful materials:</strong>
+- <em>Generative Search and Retrieval (2024)</em> — overview slides<br />
+- <em>The rise of generative retrieval models (2023)</em> — survey<br />
+- <em>SIGIR/ECIR tutorial slides (if any available public)</em>  </p>
+<p>You may also find NeurIPS and ICLR spotlight videos helpful for high-level intuition.</p>
+<hr />
+<h2 id="3-starter-code-repositories">🔹 3. Starter Code Repositories</h2>
+<p>Begin with small, runnable implementations:</p>
+<ul>
+<li>
+<p><strong>Minimal T5-based Generative Retriever</strong><br />
+  https://github.com/example/t5-simple-genir</p>
+</li>
+<li>
+<p><strong>GR2-style constrained decoding demo</strong><br />
+  https://github.com/example/gr2-decoding-demo</p>
+</li>
+<li>
+<p><strong>Prefix-tree decoding example</strong><br />
+  https://github.com/example/prefix-tree-search</p>
+</li>
+<li>
+<p><strong>BM25-labeled GR Training</strong><br />
+  A simple script: generate docIDs from BM25 labels and train a seq2seq model.</p>
+</li>
+</ul>
+<p>Recommended starting exercise:<br />
+👉 Train a small T5 model to generate document IDs on a tiny dataset.</p>
+<hr />
+<h2 id="4-datasets-for-experiments">🔹 4. Datasets for Experiments</h2>
+<h3 id="text-retrieval">Text Retrieval</h3>
+<ul>
+<li><strong>MS MARCO (Passage / Document)</strong>  </li>
+<li><strong>BEIR</strong> (benchmark suite)  </li>
+<li><strong>Natural Questions (NQ)</strong>  </li>
+<li><strong>MIRACL</strong></li>
+</ul>
+<h3 id="multimodal-retrieval">Multimodal Retrieval</h3>
+<ul>
+<li><strong>MS-COCO</strong>  </li>
+<li><strong>Flickr30K</strong>  </li>
+<li><strong>BookCover30K</strong>  </li>
+<li><strong>WhatsThatBook</strong>  </li>
+</ul>
+<h3 id="for-teaching-prototyping">For Teaching / Prototyping</h3>
+<ul>
+<li>Small Wikipedia slices  </li>
+<li>QA subsets  </li>
+<li>Your own prepared toy datasets</li>
+</ul>
+<hr />
+<h2 id="5-beginner-start-reading-recommendations">🔹 5. Beginner start reading recommendations</h2>
+<p><strong>Recommended Entry Path (Beginner ↝ Intermediate ↝ Modern):</strong></p>
+<ol>
+<li><strong>GENRE (2020)</strong> — first works on generative retrieval  </li>
+<li><strong>T5 for Retrieval (2021)</strong> — simple baseline  </li>
+<li><strong>ASI (ICLR 2023)</strong> — introduces hierarchical DocIDs  </li>
+<li><strong>GR2 (ICLR 2023)</strong> — constrained decoding  </li>
+<li><strong>ReasonGR (NeurIPS 2024)</strong> — reasoning-based decoding  </li>
+<li><strong>DCI (SIGIR 2025)</strong> — discriminative indexing  </li>
+<li><strong>NOVA (AAAI 2026)</strong> — unified-to-specialized architecture</li>
+</ol>
+<p>Reading these gives a complete understanding of the field’s evolution.</p>
+<hr />
+<h2 id="6-tools-practical-components">🔹 6. Tools &amp; Practical Components</h2>
+<p>Helpful elements commonly used in GR systems:</p>
+<ul>
+<li><strong>Prefix tree builder</strong></li>
+<li><strong>ID quantization / clustering</strong></li>
+<li><strong>DocID templates (hierarchical IDs)</strong></li>
+<li><strong>Synthetic query generators</strong></li>
+<li><strong>Constrained beam search tools</strong></li>
+<li><strong>Visual-text encoders (for multimodal work)</strong></li>
+</ul>
+<p>We recommend building a minimal pipeline:</p>
+<blockquote>
+<p>query → encoder → decoder → docID → matching → evaluation</p>
+</blockquote>
+<p>to get hands-on experience.</p>
+<hr />
+<h2 id="7-extra-joining-the-community">🔹 7. Extra: Joining the Community</h2>
+<ul>
+<li>SIGIR paper reading groups  </li>
+<li>Open-source GR communities  </li>
+<li>Relevant GitHub organizations and curated lists  </li>
+<li>Discord/Slack groups (if applicable)</li>
+</ul>
+<hr />
+<p><em>Feel free to suggest new resources — this page is intended to grow with the community.</em></p>
 
 
 
