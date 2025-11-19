@@ -1,8 +1,23 @@
-site_name: GenIR Reading
+site_name: GenIR Notes
 site_url: https://genir-notes.github.io
 
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+plugins:
+  - search
 
 nav:
   - Home: index.md
+  - Document Retrieval:
+      - Roadmap: document_retrieval/roadmap.md
+      - Papers: document_retrieval/papers.md
+  - Recommendation:
+      - Roadmap: recommendation/roadmap.md
+      - Papers: recommendation/papers.md
+  - Multimodal Retrieval & Recommendation:
+      - Roadmap: multimodal/roadmap.md
+      - Papers: multimodal/papers.md
