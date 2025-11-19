@@ -3,6 +3,7 @@ site_url: https://genir-notes.github.io
 
 theme:
   name: material
+  custom_dir: docs/overrides
   features:
     - navigation.top
     - navigation.tabs
