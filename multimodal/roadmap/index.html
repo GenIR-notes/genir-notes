@@ -270,7 +270,7 @@
         
       
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-
+ 
 <style>
   .custom-btn {
     display: inline-flex;
@@ -278,30 +278,52 @@
     gap: 6px;
     padding: 6px 12px;
     font-size: 14px;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI";
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
     border: 1px solid #d0d7de;
     border-radius: 6px;
     background-color: #f6f8fa;
     color: #24292f;
     text-decoration: none;
-    white-space: nowrap;  /* 不换行 */
-  }
-  .custom-btn:hover {
-    background-color: #f3f4f6;
+    white-space: nowrap;
   }
   html[data-md-color-scheme="slate"] .custom-btn {
     background-color: #1c2128;
     border-color: #30363d;
     color: #c9d1d9;
   }
-  html[data-md-color-scheme="slate"] .custom-btn:hover {
-    background-color: #262c34;
-  }
 </style>
 
 <div style="margin-left:auto; display:flex; align-items:center; gap:16px; padding-right:10px;">
 
-  <!-- Visitors custom button -->
+  <!-- Visitors: GitHub-style button -->
+  <span class="custom-btn">
+    <span style="font-size:16px;">👁</span>
+    Visitors:
+    <span id="visitor-img" style="display:inline-block;"></span>
+  </span>
+
+  <!-- Insert websiteout counter (JS script will populate visitor-img) -->
+  <script>
+    const target = document.getElementById("visitor-img");
+
+    // Load websiteout counter JS
+    const s = document.createElement("script");
+    s.src = "https://counter.websiteout.com/js/36/0/0/0";
+    s.onload = () => {
+      // After script loads, it inserts an <img> at document.body
+      // We move that <img> into our button
+      const imgs = document.querySelectorAll("img[src*='counter.websiteout']");
+      if (imgs.length > 0) {
+        const img = imgs[0];
+        img.style.height = "20px";  // match GitHub button height
+        img.style.verticalAlign = "middle";
+        target.appendChild(img);
+      }
+    };
+    document.body.appendChild(s);
+  </script>
+
+<!-- Visitors custom button -->
   <a href="https://clustrmaps.com/site/wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI"
      target="_blank"
      class="custom-btn">
