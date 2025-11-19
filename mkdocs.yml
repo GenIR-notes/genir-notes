@@ -23,7 +23,7 @@ extra:
       name: "Watch updates"
 
   include:
-    - partials/stats.html
+    - overrides/partials/stats.html
 
 nav:
   - Home: index.md
