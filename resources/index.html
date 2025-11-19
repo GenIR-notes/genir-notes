@@ -275,7 +275,7 @@
         
       
   <script async defer src="https://buttons.github.io/buttons.js"></script>
- 
+
 <style>
   .custom-btn {
     display: inline-flex;
@@ -300,55 +300,7 @@
 
 <div style="margin-left:auto; display:flex; align-items:center; gap:16px; padding-right:10px;">
 
-  <!-- Visitors: GitHub-style button -->
-  <span class="custom-btn">
-    <span style="font-size:16px;">👁</span>
-    Visitors:
-    <span id="visitor-img" style="display:inline-block;"></span>
-  </span>
-
-  <!-- Insert websiteout counter (JS script will populate visitor-img) -->
-  <script>
-    const target = document.getElementById("visitor-img");
-
-    // Load websiteout counter JS
-    const s = document.createElement("script");
-    s.src = "https://counter.websiteout.com/js/36/0/0/0";
-    s.onload = () => {
-      // After script loads, it inserts an <img> at document.body
-      // We move that <img> into our button
-      const imgs = document.querySelectorAll("img[src*='counter.websiteout']");
-      if (imgs.length > 0) {
-        const img = imgs[0];
-        img.style.height = "20px";  // match GitHub button height
-        img.style.verticalAlign = "middle";
-        target.appendChild(img);
-      }
-    };
-    document.body.appendChild(s);
-  </script>
-
-<!-- Visitors custom button -->
-  <a href="https://clustrmaps.com/site/wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI"
-     target="_blank"
-     class="custom-btn">
-     <span style="font-size:16px;">👁</span>
-     Visitors: <span id="visit-count">…</span>
-  </a>
-
-  <script>
-    fetch("https://clustrmaps.com/webclustr/maps_v1/map_light.json?d=wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI")
-      .then(r => r.json())
-      .then(data => {
-        const count = data.total_hits ?? data.visits ?? "0";
-        document.getElementById("visit-count").textContent = count;
-      })
-      .catch(() => {
-        document.getElementById("visit-count").textContent = "0";
-      });
-  </script>
-
-  <!-- GitHub STAR button -->
+  <!-- ⭐ STAR -->
   <a class="github-button"
      href="https://github.com/GenIR-notes/genir-notes"
      data-icon="octicon-star"
@@ -357,7 +309,7 @@
       Star
   </a>
 
-  <!-- GitHub WATCH button -->
+  <!-- 👁 WATCH -->
   <a class="github-button"
      href="https://github.com/GenIR-notes/genir-notes/subscription"
      data-icon="octicon-eye"
@@ -365,6 +317,42 @@
      data-show-count="true">
       Watch
   </a>
+
+  <!-- 👁 VISITORS -->
+  <span class="custom-btn">
+    <span style="font-size:16px;">👁</span>
+    Visitors:
+    <span id="visitor-img" style="display:inline-block;"></span>
+  </span>
+
+  <script>
+    const markerId = "webout-counter-marker";
+    const marker = document.createElement("div");
+    marker.id = markerId;
+    document.body.appendChild(marker);
+
+    const script = document.createElement("script");
+    script.src = "https://counter.websiteout.com/js/36/0/0/0";
+    script.onload = () => {
+      setTimeout(() => {
+        const imgs = document.querySelectorAll("img[src*='counter.websiteout']");
+        if (imgs.length > 0) {
+          const img = imgs[0];
+          img.style.height = "20px";
+          img.style.verticalAlign = "middle";
+
+          const target = document.getElementById("visitor-img");
+          target.appendChild(img);
+
+          if (img.parentElement !== target) {
+            img.parentElement.remove();
+          }
+        }
+      }, 300);
+    };
+    document.body.appendChild(script);
+  </script>
+
 </div>
 
       <main class="md-main" data-md-component="main">
