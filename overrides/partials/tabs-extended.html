@@ -3,14 +3,26 @@
 
 <div style="margin-left:auto; display:flex; align-items:center; gap:16px; padding-right:10px;">
 
-<!-- ClustrMaps mini counter -->
-  <a href="https://clustrmaps.com/site/wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI" 
-     target="_blank" aria-label="Visitor statistics">
-    <img 
-      src="https://clustrmaps.com/map_v2.png?d=wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI&cl=ffffff&c=0&w=1"
-      style="height:24px; border-radius:4px;"
-    />
+  <!-- Visitors (GitHub-style button + ClustrMaps JSON) -->
+  <a class="github-button"
+     href="https://clustrmaps.com/site/wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI"
+     data-icon="octicon-eye"
+     data-size="large">
+    Visitors&nbsp;<span id="visit-count">…</span>
   </a>
+
+  <script>
+    fetch("https://clustrmaps.com/webclustr/maps_v1/map_light.json?d=wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI")
+      .then(r => r.json())
+      .then(data => {
+        // Some accounts use "total_hits", some use "visits"
+        const count = data.total_hits ?? data.visits ?? "0";
+        document.getElementById("visit-count").textContent = count;
+      })
+      .catch(() => {
+        document.getElementById("visit-count").textContent = "0";
+      });
+  </script>
 
   <script>
     fetch("https://hits.sh/GenIR-notes/genir-notes.json")
