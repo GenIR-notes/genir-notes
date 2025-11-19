@@ -23,3 +23,15 @@ nav:
   - Multimodal Retrieval & Recommendation:
       - Roadmap: multimodal/roadmap.md
       - Papers: multimodal/papers.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/GenIR-notes/genir-notes
+      name: "Star us on GitHub!"
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/GenIR-notes/genir-notes/watchers
+      name: "Watch updates"
