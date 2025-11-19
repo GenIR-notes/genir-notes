@@ -689,68 +689,68 @@
 
 <h1 id="papers-document-retrieval">Papers: Document Retrieval</h1>
 <p>This page organizes Generative Document Retrieval papers <strong>by their core innovation</strong>.<br />
-For each paper, we list the title, link, a short 1–2 sentence summary, and tags.<br />
-This categorization avoids duplication across method components and groups papers by their main intellectual contribution.</p>
+To keep the page compact, each paper is listed using lightweight formatting (bold titles instead of section headers).</p>
 <hr />
 <h1 id="a-id-space-indexing-innovations">🔷 A. ID Space &amp; Indexing Innovations</h1>
-<h2 id="asi-autoregressive-search-index-iclr-2023"><strong>ASI – Autoregressive Search Index (ICLR 2023)</strong></h2>
-<p>🔗 <a href="https://arxiv.org/abs/2204.10628">paper</a><br />
-<strong>Summary:</strong> Introduces hierarchical document IDs organized as a multi-level tree to improve retrieval control and semantic structuring.<br />
-<strong>Tags:</strong> <code>hierarchical-id</code>, <code>indexing</code>, <code>tree-structure</code></p>
-<h2 id="seater-2023"><strong>SEATER (2023)</strong></h2>
-<p>🔗 <a href="https://arxiv.org/abs/2305.10429">paper</a><br />
-<strong>Summary:</strong> Decomposes GR errors and proposes structured tree IDs to reduce ambiguity during ID generation.<br />
+<p><strong>ASI – Autoregressive Search Index (ICLR 2023)</strong><br />
+🔗 <a href="https://arxiv.org/abs/2204.10628">paper</a><br />
+<em>Hierarchical document IDs with multi-level tree structure for controlled ID generation.</em><br />
+<strong>Tags:</strong> <code>hierarchical-id</code>, <code>indexing</code></p>
+<p><strong>SEATER (2023)</strong><br />
+🔗 <a href="https://arxiv.org/abs/2305.10429">paper</a><br />
+<em>Structured tree IDs to reduce ambiguity by decomposing GR errors.</em><br />
 <strong>Tags:</strong> <code>structured-id</code>, <code>error-analysis</code></p>
-<h2 id="dci-discriminative-contrastive-indexing-sigir-2025"><strong>DCI – Discriminative Contrastive Indexing (SIGIR 2025)</strong></h2>
-<p>🔗 paper (placeholder)<br />
-<strong>Summary:</strong> Employs groupwise contrastive learning to produce more discriminative and semantically separated document IDs.<br />
-<strong>Tags:</strong> <code>contrastive-learning</code>, <code>id-learning</code>, <code>indexing</code></p>
-<h2 id="corpus-aligned-id-initialization-2024"><strong>Corpus-Aligned ID Initialization (2024)</strong></h2>
-<p>🔗 <a href="https://arxiv.org/abs/2401.12345">paper</a><br />
-<strong>Summary:</strong> Generates pseudo-queries from corpus text to create corpus-aligned initial IDs that better match semantic distributions.<br />
+<p><strong>DCI – Discriminative Contrastive Indexing (SIGIR 2025)</strong><br />
+🔗 paper (placeholder)<br />
+<em>Uses groupwise contrastive learning to produce discriminative document IDs.</em><br />
+<strong>Tags:</strong> <code>contrastive</code>, <code>id-learning</code></p>
+<p><strong>Corpus-Aligned ID Initialization (2024)</strong><br />
+🔗 <a href="https://arxiv.org/abs/2401.12345">paper</a><br />
+<em>Initializes docIDs using synthetic queries aligned with corpus semantics.</em><br />
 <strong>Tags:</strong> <code>id-initialization</code>, <code>query-synthesis</code></p>
-<hr />
-<h1 id="b-decoding-inference-innovations">🔷 B. Decoding &amp; Inference Innovations</h1>
-<h2 id="gr2-guided-decoding-for-generative-retrieval-iclr-2023"><strong>GR2 – Guided Decoding for Generative Retrieval (ICLR 2023)</strong></h2>
-<p>🔗 <a href="https://arxiv.org/abs/2305.03279">paper</a><br />
-<strong>Summary:</strong> Adds constraints and guidance to the decoding process to improve the accuracy and determinism of ID generation.<br />
-<strong>Tags:</strong> <code>guided-decoding</code>, <code>constraint</code></p>
-<h2 id="reasongr-multi-step-reasoning-for-gr-neurips-2024"><strong>ReasonGR – Multi-Step Reasoning for GR (NeurIPS 2024)</strong></h2>
-<p>🔗 <a href="https://arxiv.org/abs/2406.04523">paper</a><br />
-<strong>Summary:</strong> Introduces multi-hop reasoning within decoding, enabling more accurate ID predictions for ambiguous or complex queries.<br />
-<strong>Tags:</strong> <code>reasoning</code>, <code>multihop</code>, <code>complex-query</code></p>
-<h2 id="cgbs-decoding-2025"><strong>CGBS Decoding (2025)</strong></h2>
-<p>🔗 paper (placeholder)<br />
-<strong>Summary:</strong> Uses query–cover alignment signals and constrained decoding to incorporate visual information into ID generation.<br />
-<strong>Tags:</strong> <code>cover-aware</code>, <code>cross-modal-decoding</code>, <code>constraint</code></p>
-<hr />
-<h1 id="c-model-architecture-innovations">🔷 C. Model Architecture Innovations</h1>
-<h2 id="genre-2020"><strong>GENRE (2020)</strong></h2>
-<p>🔗 <a href="https://arxiv.org/abs/2001.09977">paper</a> · <a href="https://github.com/facebookresearch/genre">code</a><br />
-<strong>Summary:</strong> Early generative retrieval using seq2seq generation over entity names; foundational to Generative IR.<br />
-<strong>Tags:</strong> <code>seq2seq</code>, <code>entity-retrieval</code></p>
-<h2 id="t5-for-retrieval-2021"><strong>T5 for Retrieval (2021)</strong></h2>
-<p>🔗 <a href="https://arxiv.org/abs/2108.06254">paper</a><br />
-<strong>Summary:</strong> Shows that encoder–decoder LMs can be fine-tuned to directly generate document IDs.<br />
-<strong>Tags:</strong> <code>t5</code>, <code>encoder-decoder</code></p>
-<h2 id="nova-unified-to-specialized-generative-framework-aaai-2026"><strong>NOVA – Unified-to-Specialized Generative Framework (AAAI 2026)</strong></h2>
-<p>🔗 paper (placeholder)<br />
-<strong>Summary:</strong> Proposes a multi-view architecture combining a unified encoder with specialized decoders for cross-modal and text-only retrieval.<br />
-<strong>Tags:</strong> <code>multi-view</code>, <code>specialized-decoder</code>, <code>architecture</code></p>
-<hr />
-<h1 id="d-training-paradigms-learning-signals">🔷 D. Training Paradigms &amp; Learning Signals</h1>
-<h2 id="bm25-labeled-gr-training-2023"><strong>BM25-Labeled GR Training (2023)</strong></h2>
-<p>🔗 <a href="https://arxiv.org/abs/2307.06961">paper</a><br />
-<strong>Summary:</strong> Supervises GR using BM25-based pseudo labels, enabling training without annotated relevance data.<br />
+<h1 id="b-training-paradigms-learning-signals">🔷 B. Training Paradigms &amp; Learning Signals</h1>
+<p><strong>BM25-Labeled GR Training (2023)</strong><br />
+🔗 <a href="https://arxiv.org/abs/2307.06961">paper</a><br />
+<em>Trains GR using BM25 pseudo relevance labels, enabling training without human annotations.</em><br />
 <strong>Tags:</strong> <code>pseudo-label</code>, <code>weak-supervision</code></p>
-<h2 id="synthetic-query-learning-2024"><strong>Synthetic Query Learning (2024)</strong></h2>
-<p>🔗 paper (placeholder)<br />
-<strong>Summary:</strong> Uses LLMs to generate synthetic queries and trains GR on the synthetic ID mappings.<br />
+<p><strong>Synthetic Query Learning (2024)</strong><br />
+🔗 paper (placeholder)<br />
+<em>Uses LLM-generated synthetic queries to improve GR training and corpus coverage.</em><br />
 <strong>Tags:</strong> <code>synthetic-data</code>, <code>pretraining</code></p>
-<h2 id="contrastive-hybrid-training-2025"><strong>Contrastive Hybrid Training (2025)</strong></h2>
-<p>🔗 paper (placeholder)<br />
-<strong>Summary:</strong> Combines generative objectives with contrastive docID supervision for more stable and discriminative GR training.<br />
+<p><strong>Contrastive Hybrid Training (2025)</strong><br />
+🔗 paper (placeholder)<br />
+<em>Combines generative decoding loss with contrastive objectives for discriminative docIDs.</em><br />
 <strong>Tags:</strong> <code>hybrid-training</code>, <code>contrastive</code></p>
+<h1 id="c-model-architecture-innovations">🔷 C. Model Architecture Innovations</h1>
+<p><strong>GENRE (2020)</strong><br />
+🔗 <a href="https://arxiv.org/abs/2001.09977">paper</a> · <a href="https://github.com/facebookresearch/genre">code</a><br />
+<em>Early seq2seq generative retrieval using entity generation.</em><br />
+<strong>Tags:</strong> <code>seq2seq</code>, <code>entity-retrieval</code></p>
+<p><strong>T5 for Retrieval (2021)</strong><br />
+🔗 <a href="https://arxiv.org/abs/2108.06254">paper</a><br />
+<em>Demonstrates encoder–decoder LMs can generate document IDs directly.</em><br />
+<strong>Tags:</strong> <code>t5</code>, <code>encoder-decoder</code></p>
+<p><strong>NOVA – Unified-to-Specialized Framework (AAAI 2026)</strong><br />
+🔗 paper (placeholder)<br />
+<em>Multi-view encoder with specialized decoders for cross-modal and text-only retrieval.</em><br />
+<strong>Tags:</strong> <code>multi-view</code>, <code>decoder</code>, <code>architecture</code></p>
+<hr />
+<hr />
+<h1 id="d-decoding-inference-innovations">🔷 D. Decoding &amp; Inference Innovations</h1>
+<p><strong>GR2 – Guided Decoding for GR (ICLR 2023)</strong><br />
+🔗 <a href="https://arxiv.org/abs/2305.03279">paper</a><br />
+<em>Adds constrained / guided decoding for more accurate ID generation.</em><br />
+<strong>Tags:</strong> <code>guided-decoding</code>, <code>constraint</code></p>
+<p><strong>ReasonGR – Multi-Step Reasoning (NeurIPS 2024)</strong><br />
+🔗 <a href="https://arxiv.org/abs/2406.04523">paper</a><br />
+<em>Models multi-hop reasoning during decoding to improve retrieval on complex queries.</em><br />
+<strong>Tags:</strong> <code>reasoning</code>, <code>multihop</code></p>
+<p><strong>CGBS Decoding (2025)</strong><br />
+🔗 paper (placeholder)<br />
+<em>Cover-aware and constrained decoding for multimodal ID generation.</em><br />
+<strong>Tags:</strong> <code>cover-aware</code>, <code>multimodal</code>, <code>constraint</code></p>
+<hr />
+<hr />
 
 
 
