@@ -289,7 +289,7 @@
   </a>
 
   <script>
-    fetch("https://api.countapi.xyz/hit/GenIR-notes/genir-notes")
+  fetch("https://api.countapi.xyz/hit/genir_notes/visits")
       .then(r => r.json())
       .then(d => {
         document.getElementById("visit-count").textContent = d.value;
