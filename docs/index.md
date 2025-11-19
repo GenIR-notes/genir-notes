@@ -1,3 +1,12 @@
+<div align="center">
+
+![visits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://genir-notes.github.io&title=visits)
+![stars](https://img.shields.io/github/stars/GenIR-notes/genir-notes?style=social)
+![watchers](https://img.shields.io/github/watchers/GenIR-notes/genir-notes?style=social)
+
+</div>
+
+
 # GenIR Reading Group
 
 欢迎来到我们的 Generative Information Retrieval 阅读笔记网站！
