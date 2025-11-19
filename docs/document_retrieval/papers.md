@@ -1,90 +1,91 @@
 # Papers: Document Retrieval
 
 This page organizes Generative Document Retrieval papers **by their core innovation**.  
-For each paper, we list the title, link, a short 1–2 sentence summary, and tags.  
-This categorization avoids duplication across method components and groups papers by their main intellectual contribution.
+To keep the page compact, each paper is listed using lightweight formatting (bold titles instead of section headers).
 
 ---
 
 # 🔷 A. ID Space & Indexing Innovations
 
-## **ASI – Autoregressive Search Index (ICLR 2023)**  
+**ASI – Autoregressive Search Index (ICLR 2023)**  
 🔗 [paper](https://arxiv.org/abs/2204.10628)  
-**Summary:** Introduces hierarchical document IDs organized as a multi-level tree to improve retrieval control and semantic structuring.  
-**Tags:** `hierarchical-id`, `indexing`, `tree-structure`
+*Hierarchical document IDs with multi-level tree structure for controlled ID generation.*  
+**Tags:** `hierarchical-id`, `indexing`
 
-## **SEATER (2023)**  
+**SEATER (2023)**  
 🔗 [paper](https://arxiv.org/abs/2305.10429)  
-**Summary:** Decomposes GR errors and proposes structured tree IDs to reduce ambiguity during ID generation.  
+*Structured tree IDs to reduce ambiguity by decomposing GR errors.*  
 **Tags:** `structured-id`, `error-analysis`
 
-## **DCI – Discriminative Contrastive Indexing (SIGIR 2025)**  
+**DCI – Discriminative Contrastive Indexing (SIGIR 2025)**  
 🔗 paper (placeholder)  
-**Summary:** Employs groupwise contrastive learning to produce more discriminative and semantically separated document IDs.  
-**Tags:** `contrastive-learning`, `id-learning`, `indexing`
+*Uses groupwise contrastive learning to produce discriminative document IDs.*  
+**Tags:** `contrastive`, `id-learning`
 
-## **Corpus-Aligned ID Initialization (2024)**  
+**Corpus-Aligned ID Initialization (2024)**  
 🔗 [paper](https://arxiv.org/abs/2401.12345)  
-**Summary:** Generates pseudo-queries from corpus text to create corpus-aligned initial IDs that better match semantic distributions.  
+*Initializes docIDs using synthetic queries aligned with corpus semantics.*  
 **Tags:** `id-initialization`, `query-synthesis`
 
 
----
 
-# 🔷 B. Decoding & Inference Innovations
+# 🔷 B. Training Paradigms & Learning Signals
 
-## **GR2 – Guided Decoding for Generative Retrieval (ICLR 2023)**  
-🔗 [paper](https://arxiv.org/abs/2305.03279)  
-**Summary:** Adds constraints and guidance to the decoding process to improve the accuracy and determinism of ID generation.  
-**Tags:** `guided-decoding`, `constraint`
+**BM25-Labeled GR Training (2023)**  
+🔗 [paper](https://arxiv.org/abs/2307.06961)  
+*Trains GR using BM25 pseudo relevance labels, enabling training without human annotations.*  
+**Tags:** `pseudo-label`, `weak-supervision`
 
-## **ReasonGR – Multi-Step Reasoning for GR (NeurIPS 2024)**  
-🔗 [paper](https://arxiv.org/abs/2406.04523)  
-**Summary:** Introduces multi-hop reasoning within decoding, enabling more accurate ID predictions for ambiguous or complex queries.  
-**Tags:** `reasoning`, `multihop`, `complex-query`
-
-## **CGBS Decoding (2025)**  
+**Synthetic Query Learning (2024)**  
 🔗 paper (placeholder)  
-**Summary:** Uses query–cover alignment signals and constrained decoding to incorporate visual information into ID generation.  
-**Tags:** `cover-aware`, `cross-modal-decoding`, `constraint`
+*Uses LLM-generated synthetic queries to improve GR training and corpus coverage.*  
+**Tags:** `synthetic-data`, `pretraining`
 
+**Contrastive Hybrid Training (2025)**  
+🔗 paper (placeholder)  
+*Combines generative decoding loss with contrastive objectives for discriminative docIDs.*  
+**Tags:** `hybrid-training`, `contrastive`
 
----
 
 # 🔷 C. Model Architecture Innovations
 
-## **GENRE (2020)**  
+**GENRE (2020)**  
 🔗 [paper](https://arxiv.org/abs/2001.09977) · [code](https://github.com/facebookresearch/genre)  
-**Summary:** Early generative retrieval using seq2seq generation over entity names; foundational to Generative IR.  
+*Early seq2seq generative retrieval using entity generation.*  
 **Tags:** `seq2seq`, `entity-retrieval`
 
-## **T5 for Retrieval (2021)**  
+**T5 for Retrieval (2021)**  
 🔗 [paper](https://arxiv.org/abs/2108.06254)  
-**Summary:** Shows that encoder–decoder LMs can be fine-tuned to directly generate document IDs.  
+*Demonstrates encoder–decoder LMs can generate document IDs directly.*  
 **Tags:** `t5`, `encoder-decoder`
 
-## **NOVA – Unified-to-Specialized Generative Framework (AAAI 2026)**  
+**NOVA – Unified-to-Specialized Framework (AAAI 2026)**  
 🔗 paper (placeholder)  
-**Summary:** Proposes a multi-view architecture combining a unified encoder with specialized decoders for cross-modal and text-only retrieval.  
-**Tags:** `multi-view`, `specialized-decoder`, `architecture`
-
+*Multi-view encoder with specialized decoders for cross-modal and text-only retrieval.*  
+**Tags:** `multi-view`, `decoder`, `architecture`
 
 ---
 
-# 🔷 D. Training Paradigms & Learning Signals
+---
 
-## **BM25-Labeled GR Training (2023)**  
-🔗 [paper](https://arxiv.org/abs/2307.06961)  
-**Summary:** Supervises GR using BM25-based pseudo labels, enabling training without annotated relevance data.  
-**Tags:** `pseudo-label`, `weak-supervision`
+# 🔷 D. Decoding & Inference Innovations
 
-## **Synthetic Query Learning (2024)**  
+**GR2 – Guided Decoding for GR (ICLR 2023)**  
+🔗 [paper](https://arxiv.org/abs/2305.03279)  
+*Adds constrained / guided decoding for more accurate ID generation.*  
+**Tags:** `guided-decoding`, `constraint`
+
+**ReasonGR – Multi-Step Reasoning (NeurIPS 2024)**  
+🔗 [paper](https://arxiv.org/abs/2406.04523)  
+*Models multi-hop reasoning during decoding to improve retrieval on complex queries.*  
+**Tags:** `reasoning`, `multihop`
+
+**CGBS Decoding (2025)**  
 🔗 paper (placeholder)  
-**Summary:** Uses LLMs to generate synthetic queries and trains GR on the synthetic ID mappings.  
-**Tags:** `synthetic-data`, `pretraining`
+*Cover-aware and constrained decoding for multimodal ID generation.*  
+**Tags:** `cover-aware`, `multimodal`, `constraint`
 
-## **Contrastive Hybrid Training (2025)**  
-🔗 paper (placeholder)  
-**Summary:** Combines generative objectives with contrastive docID supervision for more stable and discriminative GR training.  
-**Tags:** `hybrid-training`, `contrastive`
+---
 
+
+---
