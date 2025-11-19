@@ -267,24 +267,50 @@
           
         
       
-  <!-- GitHub Buttons Loader -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<style>
+  .custom-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI";
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+    color: #24292f;
+    text-decoration: none;
+    white-space: nowrap;  /* 不换行 */
+  }
+  .custom-btn:hover {
+    background-color: #f3f4f6;
+  }
+  html[data-md-color-scheme="slate"] .custom-btn {
+    background-color: #1c2128;
+    border-color: #30363d;
+    color: #c9d1d9;
+  }
+  html[data-md-color-scheme="slate"] .custom-btn:hover {
+    background-color: #262c34;
+  }
+</style>
 
 <div style="margin-left:auto; display:flex; align-items:center; gap:16px; padding-right:10px;">
 
-  <!-- Visitors (GitHub-style button + ClustrMaps JSON) -->
-  <a class="github-button"
-     href="https://clustrmaps.com/site/wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI"
-     data-icon="octicon-eye"
-     data-size="large">
-    Visitors&nbsp;<span id="visit-count">…</span>
+  <!-- Visitors custom button -->
+  <a href="https://clustrmaps.com/site/wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI"
+     target="_blank"
+     class="custom-btn">
+     <span style="font-size:16px;">👁</span>
+     Visitors: <span id="visit-count">…</span>
   </a>
 
   <script>
     fetch("https://clustrmaps.com/webclustr/maps_v1/map_light.json?d=wf_cn-982XZZeCBdT-bIFCEedunBWFSsZ1uGiBp0CLI")
       .then(r => r.json())
       .then(data => {
-        // Some accounts use "total_hits", some use "visits"
         const count = data.total_hits ?? data.visits ?? "0";
         document.getElementById("visit-count").textContent = count;
       })
@@ -293,21 +319,12 @@
       });
   </script>
 
-  <script>
-    fetch("https://hits.sh/GenIR-notes/genir-notes.json")
-      .then(r => r.json())
-      .then(d => {
-        document.getElementById("visit-count").textContent = d.value;
-      });
-  </script>
-
   <!-- GitHub STAR button -->
   <a class="github-button"
      href="https://github.com/GenIR-notes/genir-notes"
      data-icon="octicon-star"
      data-size="large"
-     data-show-count="true"
-     aria-label="Star GenIR-notes/genir-notes on GitHub">
+     data-show-count="true">
       Star
   </a>
 
@@ -316,11 +333,9 @@
      href="https://github.com/GenIR-notes/genir-notes/subscription"
      data-icon="octicon-eye"
      data-size="large"
-     data-show-count="true"
-     aria-label="Watch GenIR-notes/genir-notes on GitHub">
+     data-show-count="true">
       Watch
   </a>
-
 </div>
 
       <main class="md-main" data-md-component="main">
