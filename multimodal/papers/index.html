@@ -282,7 +282,7 @@
   </a>
 
   <script>
-  fetch("https://api.countapi.xyz/hit/genir_notes/visits")
+    fetch("https://hits.sh/GenIR-notes/genir-notes.json")
       .then(r => r.json())
       .then(d => {
         document.getElementById("visit-count").textContent = d.value;
