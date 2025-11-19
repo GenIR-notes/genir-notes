@@ -295,7 +295,7 @@
 
 <div style="margin-left:auto; display:flex; align-items:center; gap:16px; padding-right:10px;">
 
-  <!-- ⭐ STAR -->
+  <!-- Star -->
   <a class="github-button"
      href="https://github.com/GenIR-notes/genir-notes"
      data-icon="octicon-star"
@@ -304,7 +304,7 @@
       Star
   </a>
 
-  <!-- 👁 WATCH -->
+  <!-- Watch -->
   <a class="github-button"
      href="https://github.com/GenIR-notes/genir-notes/subscription"
      data-icon="octicon-eye"
@@ -313,7 +313,7 @@
       Watch
   </a>
 
-  <!-- 👁 VISITORS -->
+  <!-- Visitors -->
   <span class="custom-btn">
     <span style="font-size:16px;">👁</span>
     Visitors:
@@ -321,31 +321,39 @@
   </span>
 
   <script>
-    const markerId = "webout-counter-marker";
-    const marker = document.createElement("div");
-    marker.id = markerId;
-    document.body.appendChild(marker);
+    // Helper: check if the websiteout counter <img> exists
+    function attachCounterImage() {
+      const target = document.getElementById("visitor-img");
+      const imgs = document.querySelectorAll("img[src*='counter.websiteout']");
+      if (imgs.length > 0) {
+        const img = imgs[0];
+        img.style.height = "20px";
+        img.style.verticalAlign = "middle";
 
+        // Move it into our Visitors button (avoids duplicates)
+        if (img.parentElement !== target) {
+          target.innerHTML = "";
+          target.appendChild(img);
+        }
+        return true;
+      }
+      return false;
+    }
+
+    // Load websiteout script
     const script = document.createElement("script");
     script.src = "https://counter.websiteout.com/js/36/0/0/0";
-    script.onload = () => {
-      setTimeout(() => {
-        const imgs = document.querySelectorAll("img[src*='counter.websiteout']");
-        if (imgs.length > 0) {
-          const img = imgs[0];
-          img.style.height = "20px";
-          img.style.verticalAlign = "middle";
-
-          const target = document.getElementById("visitor-img");
-          target.appendChild(img);
-
-          if (img.parentElement !== target) {
-            img.parentElement.remove();
-          }
-        }
-      }, 300);
-    };
     document.body.appendChild(script);
+
+    // Keep checking until the counter <img> appears
+    const interval = setInterval(() => {
+      if (attachCounterImage()) {
+        clearInterval(interval);
+      }
+    }, 200);
+
+    // Max wait 5 seconds
+    setTimeout(() => clearInterval(interval), 5000);
   </script>
 
 </div>
