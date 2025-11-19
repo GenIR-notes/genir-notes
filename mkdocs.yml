@@ -22,6 +22,9 @@ extra:
       link: https://github.com/GenIR-notes/genir-notes/watchers
       name: "Watch updates"
 
+  include:
+    - partials/stats.html
+
 nav:
   - Home: index.md
   - Get Started: resources.md
