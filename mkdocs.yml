@@ -3,7 +3,7 @@ site_url: https://genir-notes.github.io
 
 theme:
   name: material
-  custom_dir: docs/overrides
+  custom_dir: overrides
   features:
     - navigation.top
     - navigation.tabs
@@ -23,7 +23,7 @@ extra:
       name: "Watch updates"
 
   include:
-    - overrides/partials/stats.html
+    - partials/stats.html
 
 nav:
   - Home: index.md
