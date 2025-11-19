@@ -1,11 +1,26 @@
+<!-- GitHub Buttons Loader -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <div style="margin-left:auto; display:flex; align-items:center; gap:16px; padding-right:10px;">
 
-  <!-- Visits -->
- <img src="https://visitor-badge.laobi.icu/badge?page_id=GenIR-notes.genir-notes" style="height:20px;" />
+  <!-- Visitors - GitHub-style Unified Button -->
+  <a class="github-button"
+     href="#"
+     data-icon="octicon-eye"
+     data-size="large"
+     aria-label="Visitors">
+    Visitors&nbsp;<span id="visit-count">0</span>
+  </a>
 
-  <!-- Real GitHub STAR button -->
+  <script>
+    fetch("https://api.countapi.xyz/hit/GenIR-notes/genir-notes")
+      .then(r => r.json())
+      .then(d => {
+        document.getElementById("visit-count").textContent = d.value;
+      });
+  </script>
+
+  <!-- GitHub STAR button -->
   <a class="github-button"
      href="https://github.com/GenIR-notes/genir-notes"
      data-icon="octicon-star"
@@ -15,7 +30,7 @@
       Star
   </a>
 
-  <!-- Real GitHub WATCH button -->
+  <!-- GitHub WATCH button -->
   <a class="github-button"
      href="https://github.com/GenIR-notes/genir-notes/subscription"
      data-icon="octicon-eye"
