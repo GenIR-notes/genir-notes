@@ -14,13 +14,13 @@ plugins:
   - search
 
 extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/GenIR-notes/genir-notes
-      name: "Star us on GitHub!"
-    - icon: fontawesome/solid/eye
-      link: https://github.com/GenIR-notes/genir-notes/watchers
-      name: "Watch updates"
+  # social:
+  #   - icon: fontawesome/brands/github
+  #     link: https://github.com/GenIR-notes/genir-notes
+  #     name: "Star us on GitHub!"
+  #   - icon: fontawesome/solid/eye
+  #     link: https://github.com/GenIR-notes/genir-notes/watchers
+  #     name: "Watch updates"
 
 
 nav:
