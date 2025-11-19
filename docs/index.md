@@ -1,11 +1,3 @@
-<div align="center">
-
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://genir-notes.github.io&title=visits" />
-<img src="https://img.shields.io/github/stars/GenIR-notes/genir-notes?style=social" />
-<img src="https://img.shields.io/github/watchers/GenIR-notes/genir-notes?style=social" />
-
-</div>
-
 
 # GenIR Reading Group
 
