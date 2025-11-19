@@ -5,7 +5,7 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 
 ---
 
-# 🔷 A. ID Space & Indexing Innovations
+## 🔷 A. ID Space & Indexing Innovations
 
 **ASI – Autoregressive Search Index (ICLR 2023)**  
 🔗 [paper](https://arxiv.org/abs/2204.10628)  
@@ -29,7 +29,7 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 
 
 
-# 🔷 B. Training Paradigms & Learning Signals
+## 🔷 B. Training Paradigms & Learning Signals
 
 **BM25-Labeled GR Training (2023)**  
 🔗 [paper](https://arxiv.org/abs/2307.06961)  
@@ -47,7 +47,7 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 **Tags:** `hybrid-training`, `contrastive`
 
 
-# 🔷 C. Model Architecture Innovations
+## 🔷 C. Model Architecture Innovations
 
 **GENRE (2020)**  
 🔗 [paper](https://arxiv.org/abs/2001.09977) · [code](https://github.com/facebookresearch/genre)  
@@ -68,7 +68,7 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 
 ---
 
-# 🔷 D. Decoding & Inference Innovations
+## 🔷 D. Decoding & Inference Innovations
 
 **GR2 – Guided Decoding for GR (ICLR 2023)**  
 🔗 [paper](https://arxiv.org/abs/2305.03279)  
