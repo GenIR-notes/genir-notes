@@ -1,4 +1,5 @@
-<p id="clear-filters" style="cursor:pointer; color:#2563eb;">Clear filters</p>
+[Clear filters](#){: #clear-filters }
+
 
 # Papers: Document Retrieval
 
@@ -9,18 +10,27 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 
 ## 🔷 A. ID Space & Indexing Innovations
 
-**Unstructured Atomic Integers (Tay et al. 2022)**  
-Tags:  [title](#q=title) · [MS MARCO Doc](#q=msmarcodoc) · [contrastive learning](#q=contrastive) · [PQ](#q=pq)
+<div class="paper-entry" data-tags="title,MS MARCO Doc,contrastive learning,PQ">
 
-**ASI – Autoregressive Search Index (ICLR 2023)**  
-🔗 [paper](https://arxiv.org/abs/2204.10628)  
-*Hierarchical document IDs with multi-level tree structure for controlled ID generation.*  
-Tags:  [title](#q=title) · [contrastive learning](#q=contrastive)
+**AAAAAAAAAAA (Tay et al. 2022)**  
+Tags: [title](?tag=title) · [MS MARCO Doc](?tag=MS%20MARCO%20Doc)
 
-**SEATER (2023)**  
-🔗 [paper](https://arxiv.org/abs/2305.10429)  
-*Structured tree IDs to reduce ambiguity by decomposing GR errors.*  
-Tags:  [title](#q=title) · [MS MARCO Doc](#q=msmarcodoc) · [n-grams](#q=ngrams) · [RQ](#q=rq)
+</div>
+
+<div class="paper-entry" data-tags="PQ, MS MARCO Doc">
+
+**BBBBBBBBBBBBB (Tay et al. 2022)**  
+Tags: [PQ](?tag=pq) · [MS MARCO Doc](?tag=MS%20MARCO%20Doc)
+
+</div>
+
+<div class="paper-entry" data-tags="title, ngrams, NQ">
+
+**CCCCCCCCCCCCCCCCCc (Tay et al. 2022)**  
+Tags: [title](?tag=title) · [n-grams](?tag=ngrams) · [NQ](?tag=nq)
+
+</div>
+
 
 **DCI – Discriminative Contrastive Indexing (SIGIR 2025)**  
 🔗 paper (placeholder)  
