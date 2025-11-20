@@ -1,6 +1,4 @@
-<button id="clear-filters" style="display:none;" class="clear-filter-btn">
-  ✕ Clear filters
-</button>
+
 
 # Papers: Document Retrieval
 
@@ -146,3 +144,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+
+<button id="clear-filters" class="floating-clear-btn" style="display: none;">
+  Clear Filters ✖
+</button>
+
+<style>
+.floating-clear-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 9999;
+}
+.floating-clear-btn:hover {
+    background-color: #303f9f;
+}
+</style>
