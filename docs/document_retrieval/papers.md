@@ -1,3 +1,5 @@
+[Clear filters](#)  
+
 # Papers: Document Retrieval
 
 This page organizes Generative Document Retrieval papers **by their core innovation**.  
@@ -6,6 +8,9 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 ---
 
 ## 🔷 A. ID Space & Indexing Innovations
+
+**Unstructured Atomic Integers (Tay et al. 2022)**  
+**Tags:**  [title](#q=title) · [MS MARCO Doc](#q=msmarcodoc) · [contrastive learning](#q=contrastive) · [PQ](#q=pq)
 
 **ASI – Autoregressive Search Index (ICLR 2023)**  
 🔗 [paper](https://arxiv.org/abs/2204.10628)  
