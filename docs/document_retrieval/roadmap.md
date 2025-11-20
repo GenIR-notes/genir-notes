@@ -1,12 +1,22 @@
+# Identifier Design Roadmap
+
+This roadmap provides an overview of predefined document identifier (docid) design strategies in GenIR. 
+Docid design is typically organized around two major categories: **Single-docid** (using one docid to represent the doc) and **Multi-docid** (using multiple docids to represent the doc). 
+A *Single docid* can be constructed using either **number-based docids** or **word-based docids**, each representing different encoding principles. 
+These individual docid types can also be combined or extended to form **Multi-docid** structures, which aim to capture richer or more diverse document representations.
+
+The diagram below summarizes the relationships among these design families and lists representative approaches for each category.
+
+
 ```mermaid
 flowchart LR
 
     %% Main categories
-    A["A single docid"]
-    B["Multiple docids"]
+    A["Single-docid"]
+    B["Multi-docid"]
 
-    A --> A1["Number-based docids"]
-    A --> A2["Word-based docids"]
+    A --> A1["Number-based docid"]
+    A --> A2["Word-based docid"]
 
     %% Number-based docids breakdown
     A1 --> A1a["Unstructured atomic integers<br>(Tay et al. 2022)"]
