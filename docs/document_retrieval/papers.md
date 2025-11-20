@@ -15,19 +15,19 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 
 ## 🔷 A. ID Space & Indexing Innovations
 
-<div class="paper-entry" data-tags="title, MS MARCO Doc">
+<div class="paper-entry" data-tags="title,ms-marco-doc">
 
 <p><strong>AAAAAAAAAA (Tay et al. 2022)</strong></p>
 
 <p>
 Tags:
 <a href="?tag=title">title</a> ·
-<a href="?tag=MS MARCO Doc">MS MARCO Doc</a>
+<a href="?tag=ms-marco-doc">MS MARCO Doc</a>
 </p>
 
 </div>
 
-<div class="paper-entry" data-tags="title, NQ">
+<div class="paper-entry" data-tags="title,NQ">
 
 <p><strong>AAAAAAAAAA (Tay et al. 2022)</strong></p>
 
@@ -39,14 +39,14 @@ Tags:
 
 </div>
 
-<div class="paper-entry" data-tags="title, MS MARCO Doc">
+<div class="paper-entry" data-tags="title,ms-marco-doc">
 
 <p><strong>AAAAAAAAAA (Tay et al. 2022)</strong></p>
 
 <p>
 Tags:
 <a href="?tag=title">title</a> ·
-<a href="?tag=MS MARCO Doc">MS MARCO Doc</a>
+<a href="?tag=ms-marco-doc">MS MARCO Doc</a>
 </p>
 
 </div>
