@@ -37,3 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// --- Show "Clear Filters" only when tag is active ---
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const activeTag = params.get("tag");
+  const clearBtn = document.getElementById("clear-filters");
+
+  if (activeTag && clearBtn) {
+    clearBtn.style.display = "block";   // show it
+
+    clearBtn.addEventListener("click", e => {
+      e.preventDefault();
+      window.location.href = window.location.pathname; // remove ?tag=xxx
+    });
+  }
+});
