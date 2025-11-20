@@ -779,30 +779,29 @@
 
   <h1>Roadmap</h1>
 
-<div class="highlight"><pre><span></span><code>flowchart LR
+<pre class="mermaid"><code>flowchart LR
 
     %% Main categories
-    A[&quot;A single docid&quot;]
-    B[&quot;Multiple docids&quot;]
+    A["A single docid"]
+    B["Multiple docids"]
 
-    A --&gt; A1[&quot;Number-based docids&quot;]
-    A --&gt; A2[&quot;Word-based docids&quot;]
+    A --&gt; A1["Number-based docids"]
+    A --&gt; A2["Word-based docids"]
 
     %% Number-based docids breakdown
-    A1 --&gt; A1a[&quot;Unstructured atomic integers&lt;br&gt;(Tay et al. 2022)&quot;]
-    A1 --&gt; A1b[&quot;Naively structured strings&lt;br&gt;(Tay et al. 2022)&quot;]
-    A1 --&gt; A1c[&quot;Semantically structured strings&lt;br&gt;(Tay et al. 2022)&quot;]
-    A1 --&gt; A1d[&quot;Product quantization strings&lt;br&gt;(Zhou et al. 2022)&quot;]
+    A1 --&gt; A1a["Unstructured atomic integers&lt;br&gt;(Tay et al. 2022)"]
+    A1 --&gt; A1b["Naively structured strings&lt;br&gt;(Tay et al. 2022)"]
+    A1 --&gt; A1c["Semantically structured strings&lt;br&gt;(Tay et al. 2022)"]
+    A1 --&gt; A1d["Product quantization strings&lt;br&gt;(Zhou et al. 2022)"]
 
     %% Word-based docids breakdown
-    A2 --&gt; A2a[&quot;Titles&lt;br&gt;(De Cao et al. 2021)&quot;]
-    A2 --&gt; A2b[&quot;URLs&lt;br&gt;(Zhou et al. 2022)&quot;]
-    A2 --&gt; A2c[&quot;Pseudo queries&lt;br&gt;(Tang et al. 2023a)&quot;]
-    A2 --&gt; A2d[&quot;Important terms&lt;br&gt;(Zhang et al. 2023)&quot;]
+    A2 --&gt; A2a["Titles&lt;br&gt;(De Cao et al. 2021)"]
+    A2 --&gt; A2b["URLs&lt;br&gt;(Zhou et al. 2022)"]
+    A2 --&gt; A2c["Pseudo queries&lt;br&gt;(Tang et al. 2023a)"]
+    A2 --&gt; A2d["Important terms&lt;br&gt;(Zhang et al. 2023)"]
 
     %% Single → Multiple
-    A --&gt; B
-</code></pre></div>
+    A --&gt; B</code></pre>
 
 
 
