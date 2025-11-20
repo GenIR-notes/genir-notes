@@ -1,4 +1,4 @@
-[Clear filters](#)  
+<p id="clear-filters" style="cursor:pointer; color:#2563eb;">Clear filters</p>
 
 # Papers: Document Retrieval
 
@@ -93,4 +93,38 @@ Tags:  [title](#q=title) · [MS MARCO Doc](#q=msmarcodoc) · [n-grams](#q=ngrams
 ---
 
 
----
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const papers = document.querySelectorAll(".paper");
+  const tagLinks = document.querySelectorAll("a[href^='#tag-']");
+
+  tagLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const tag = link.href.split("#tag-")[1];
+
+      papers.forEach(paper => {
+        const tags = paper.dataset.tags.split(",").map(t => t.trim());
+        if (tags.includes(tag)) {
+          paper.style.display = "block";
+        } else {
+          paper.style.display = "none";
+        }
+      });
+
+      // add clear button
+      if (!document.querySelector("#clear-filter")) {
+        const btn = document.createElement("button");
+        btn.id = "clear-filter";
+        btn.textContent = "Clear filter";
+        btn.style.marginTop = "20px";
+        btn.onclick = () => {
+          papers.forEach(p => p.style.display = "block");
+          btn.remove();
+        };
+        document.body.appendChild(btn);
+      }
+    });
+  });
+});
+</script>
