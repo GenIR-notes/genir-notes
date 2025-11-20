@@ -41,6 +41,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.tabbed
   - admonition
+  - attr_list
+  - md_in_html
 
   - pymdownx.superfences:
       custom_fences:
