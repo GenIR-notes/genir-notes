@@ -54,3 +54,6 @@ extra_javascript:
   - https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js
   - js/mermaid-init.js
   - js/filter-tags.js
+
+extra_css:
+  - css/extra.css
