@@ -1,5 +1,4 @@
-[Clear filters](#){: #clear-filters }
-
+<button id="clear-filters" style="margin-bottom: 10px;">Clear filters</button>
 
 # Papers: Document Retrieval
 
@@ -105,36 +104,28 @@ Tags: [title](?tag=title) · [n-grams](?tag=ngrams) · [NQ](?tag=nq)
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const papers = document.querySelectorAll(".paper");
-  const tagLinks = document.querySelectorAll("a[href^='#tag-']");
+  const params = new URLSearchParams(window.location.search);
+  const selectedTag = params.get("tag");
 
-  tagLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const tag = link.href.split("#tag-")[1];
+  const papers = document.querySelectorAll(".paper-entry");
 
-      papers.forEach(paper => {
-        const tags = paper.dataset.tags.split(",").map(t => t.trim());
-        if (tags.includes(tag)) {
-          paper.style.display = "block";
-        } else {
-          paper.style.display = "none";
-        }
-      });
-
-      // add clear button
-      if (!document.querySelector("#clear-filter")) {
-        const btn = document.createElement("button");
-        btn.id = "clear-filter";
-        btn.textContent = "Clear filter";
-        btn.style.marginTop = "20px";
-        btn.onclick = () => {
-          papers.forEach(p => p.style.display = "block");
-          btn.remove();
-        };
-        document.body.appendChild(btn);
+  if (selectedTag) {
+    papers.forEach(p => {
+      const tags = p.dataset.tags.toLowerCase();
+      if (!tags.includes(selectedTag.toLowerCase())) {
+        p.style.display = "none";
+      } else {
+        p.style.display = "block";
       }
     });
-  });
+  }
+
+  // Clear filters
+  const clear = document.querySelector("#clear-filters");
+  if (clear) {
+    clear.addEventListener("click", () => {
+      window.location.href = window.location.pathname;
+    });
+  }
 });
 </script>
