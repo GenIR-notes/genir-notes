@@ -1,12 +1,15 @@
+Welcome to **Generative Information Retrieval Reading Notes**.
 
-# GenIR Reading Group
+This site provides a curated and continuously updated collection of papers related to **GenIR**, covering three major research directions:
 
-欢迎来到我们的 Generative Information Retrieval 阅读笔记网站！
+- **Generative Document Retrieval**
+- **Generative Recommendation**
+- **Generative Multimodal Retrieval & Recommendation**
 
-我们会在这里整理：
-- 按主题分类的 GenIR 论文  
-- 每篇论文的 Paper + Code 链接  
-- 简短的一句话总结  
-- Roadmap（方法之间的关系图）  
+For each paper, we provide a concise summary, key ideas, relevant links, and brief categorization to help readers quickly understand the core contributions and the broader landscape of generative retrieval research.
 
-后续我们会继续补充内容。
+If you prefer a more systematic and structured overview of the field, you may refer to our [[**tutorial**](https://generative-ir.github.io/)].  
+If you want to quickly get started without reading lengthy materials, visit our **Get Started** page, which summarizes the essential background knowledge, resources, and datasets you will need.
+
+We will continue to expand and maintain this repository as the field evolves.  
+We hope this resource helps researchers and students navigate the rapidly growing literature on GenIR.
