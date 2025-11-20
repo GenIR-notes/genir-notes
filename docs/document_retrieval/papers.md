@@ -27,14 +27,14 @@ Tags:
 
 </div>
 
-<div class="paper-entry" data-tags="title,NQ">
+<div class="paper-entry" data-tags="title,nq">
 
 <p><strong>AAAAAAAAAA (Tay et al. 2022)</strong></p>
 
 <p>
 Tags:
 <a href="?tag=title">title</a> ·
-<a href="?tag=NQ">NQ</a>
+<a href="?tag=nq">NQ</a>
 </p>
 
 </div>
