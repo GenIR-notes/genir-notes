@@ -17,22 +17,37 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 
 <div class="paper-entry" data-tags="title, MS MARCO Doc">
 
-**AAAAAAAAAAA (Tay et al. 2022)**  
-Tags: [title](?tag=title) · [MS MARCO Doc](?tag=MS%20MARCO%20Doc)
+<p><strong>AAAAAAAAAA (Tay et al. 2022)</strong></p>
+
+<p>
+Tags:
+<a href="?tag=title">title</a> ·
+<a href="?tag=MS MARCO Doc">MS MARCO Doc</a>
+</p>
 
 </div>
 
-<div class="paper-entry" data-tags="PQ, MS MARCO Doc">
+<div class="paper-entry" data-tags="title, NQ">
 
-**BBBBBBBBBBBBB (Tay et al. 2022)**  
-Tags: [PQ](?tag=pq) · [MS MARCO Doc](?tag=MS%20MARCO%20Doc)
+<p><strong>AAAAAAAAAA (Tay et al. 2022)</strong></p>
+
+<p>
+Tags:
+<a href="?tag=title">title</a> ·
+<a href="?tag=NQ">NQ</a>
+</p>
 
 </div>
 
-<div class="paper-entry" data-tags="title, ngrams, NQ">
+<div class="paper-entry" data-tags="title, MS MARCO Doc">
 
-**CCCCCCCCCCCCCCCCCc (Tay et al. 2022)**  
-Tags: [title](?tag=title) · [n-grams](?tag=ngrams) · [NQ](?tag=nq)
+<p><strong>AAAAAAAAAA (Tay et al. 2022)</strong></p>
+
+<p>
+Tags:
+<a href="?tag=title">title</a> ·
+<a href="?tag=MS MARCO Doc">MS MARCO Doc</a>
+</p>
 
 </div>
 
