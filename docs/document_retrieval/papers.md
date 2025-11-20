@@ -10,17 +10,17 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 ## 🔷 A. ID Space & Indexing Innovations
 
 **Unstructured Atomic Integers (Tay et al. 2022)**  
-**Tags:**  [title](#q=title) · [MS MARCO Doc](#q=msmarcodoc) · [contrastive learning](#q=contrastive) · [PQ](#q=pq)
+Tags:  [title](#q=title) · [MS MARCO Doc](#q=msmarcodoc) · [contrastive learning](#q=contrastive) · [PQ](#q=pq)
 
 **ASI – Autoregressive Search Index (ICLR 2023)**  
 🔗 [paper](https://arxiv.org/abs/2204.10628)  
 *Hierarchical document IDs with multi-level tree structure for controlled ID generation.*  
-**Tags:** `hierarchical-id`, `indexing`
+Tags:  [title](#q=title) · [contrastive learning](#q=contrastive)
 
 **SEATER (2023)**  
 🔗 [paper](https://arxiv.org/abs/2305.10429)  
 *Structured tree IDs to reduce ambiguity by decomposing GR errors.*  
-**Tags:** `structured-id`, `error-analysis`
+Tags:  [title](#q=title) · [MS MARCO Doc](#q=msmarcodoc) · [n-grams](#q=ngrams) · [RQ](#q=rq)
 
 **DCI – Discriminative Contrastive Indexing (SIGIR 2025)**  
 🔗 paper (placeholder)  
