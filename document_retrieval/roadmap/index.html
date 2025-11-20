@@ -782,23 +782,23 @@
 <div class="highlight"><pre><span></span><code>flowchart LR
 
     %% Main categories
-    A[[&quot;A single docid&quot;]]
-    B[[&quot;Multiple docids&quot;]]
+    A[&quot;A single docid&quot;]
+    B[&quot;Multiple docids&quot;]
 
-    A --&gt; A1[Number-based docids]
-    A --&gt; A2[Word-based docids]
+    A --&gt; A1[&quot;Number-based docids&quot;]
+    A --&gt; A2[&quot;Word-based docids&quot;]
 
     %% Number-based docids breakdown
-    A1 --&gt; A1a[Unstructured atomic integers \\n (Tay et al. 2022)]
-    A1 --&gt; A1b[Naively structured strings \\n (Tay et al. 2022)]
-    A1 --&gt; A1c[Semantically structured strings \\n (Tay et al. 2022)]
-    A1 --&gt; A1d[Product quantization strings \\n (Zhou et al. 2022)]
+    A1 --&gt; A1a[&quot;Unstructured atomic integers\n(Tay et al. 2022)&quot;]
+    A1 --&gt; A1b[&quot;Naively structured strings\n(Tay et al. 2022)&quot;]
+    A1 --&gt; A1c[&quot;Semantically structured strings\n(Tay et al. 2022)&quot;]
+    A1 --&gt; A1d[&quot;Product quantization strings\n(Zhou et al. 2022)&quot;]
 
     %% Word-based docids breakdown
-    A2 --&gt; A2a[Titles \\n (De Cao et al. 2021)]
-    A2 --&gt; A2b[URLs \\n (Zhou et al. 2022)]
-    A2 --&gt; A2c[Pseudo queries \\n (Tang et al. 2023a)]
-    A2 --&gt; A2d[Important terms \\n (Zhang et al. 2023)]
+    A2 --&gt; A2a[&quot;Titles\n(De Cao et al. 2021)&quot;]
+    A2 --&gt; A2b[&quot;URLs\n(Zhou et al. 2022)&quot;]
+    A2 --&gt; A2c[&quot;Pseudo queries\n(Tang et al. 2023a)&quot;]
+    A2 --&gt; A2d[&quot;Important terms\n(Zhang et al. 2023)&quot;]
 
     %% Single → Multiple
     A --&gt; B
