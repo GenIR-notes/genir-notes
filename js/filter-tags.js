@@ -38,14 +38,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// Clear filter floating button
-const clearBtn = document.getElementById("clear-filters");
+// --- Show "Clear Filters" only when tag is active ---
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const activeTag = params.get("tag");
+  const clearBtn = document.getElementById("clear-filters");
 
-if (activeTag) {
-    clearBtn.classList.add("show");   // 显示按钮
-}
+  if (activeTag && clearBtn) {
+    clearBtn.style.display = "block";   // show it
 
-clearBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location.href = window.location.pathname;
+    clearBtn.addEventListener("click", e => {
+      e.preventDefault();
+      window.location.href = window.location.pathname; // remove ?tag=xxx
+    });
+  }
 });
