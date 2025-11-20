@@ -65,6 +65,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#identifier-design-roadmap" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -468,6 +473,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -777,16 +784,20 @@
 
 
 
-  <h1>Roadmap</h1>
-
+<h1 id="identifier-design-roadmap">Identifier Design Roadmap</h1>
+<p>This roadmap provides an overview of predefined document identifier (docid) design strategies in GenIR. 
+Docid design is typically organized around two major categories: <strong>Single-docid</strong> (using one docid to represent the doc) and <strong>Multi-docid</strong> (using multiple docids to represent the doc). 
+A <em>Single docid</em> can be constructed using either <strong>number-based docids</strong> or <strong>word-based docids</strong>, each representing different encoding principles. 
+These individual docid types can also be combined or extended to form <strong>Multi-docid</strong> structures, which aim to capture richer or more diverse document representations.</p>
+<p>The diagram below summarizes the relationships among these design families and lists representative approaches for each category.</p>
 <pre class="mermaid"><code>flowchart LR
 
     %% Main categories
-    A["A single docid"]
-    B["Multiple docids"]
+    A["Single-docid"]
+    B["Multi-docid"]
 
-    A --&gt; A1["Number-based docids"]
-    A --&gt; A2["Word-based docids"]
+    A --&gt; A1["Number-based docid"]
+    A --&gt; A2["Word-based docid"]
 
     %% Number-based docids breakdown
     A1 --&gt; A1a["Unstructured atomic integers&lt;br&gt;(Tay et al. 2022)"]
