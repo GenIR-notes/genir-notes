@@ -4,15 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const activeTag = activeTagRaw.toLowerCase().trim();
 
   const papers = document.querySelectorAll(".paper-entry");
+  const clearBtn = document.getElementById("clear-filters");
 
-  // ========== 论文过滤 ==========
+  // == Tag filtering ==
   if (activeTag) {
-    papers.forEach((p) => {
+    papers.forEach(p => {
       const tagStr = (p.dataset.tags || "").toLowerCase();
-      const tags = tagStr
-        .split(",")
-        .map((t) => t.trim())
-        .filter(Boolean);
+      const tags = tagStr.split(",").map(t => t.trim()).filter(Boolean);
 
       if (tags.includes(activeTag)) {
         p.style.display = "";
@@ -20,23 +18,25 @@ document.addEventListener("DOMContentLoaded", () => {
         p.style.display = "none";
       }
     });
-  } else {
-    papers.forEach((p) => {
-      p.style.display = "";
-    });
-  }
 
-  // ========== 悬浮 Clear Filters 按钮 ==========
-  const clearBtn = document.getElementById("clear-filters");
-
-  if (clearBtn) {
-    if (activeTag) {
-      clearBtn.classList.add("show"); // 只有点击 tag 后才出现
+    // 显示悬浮 Clear 按钮
+    if (clearBtn) {
+      clearBtn.style.display = "block";
     }
 
+  } else {
+    // 无 tag：全部显示并隐藏 Clear 按钮
+    papers.forEach(p => (p.style.display = ""));
+    if (clearBtn) {
+      clearBtn.style.display = "none";
+    }
+  }
+
+  // == Clear Filters ==
+  if (clearBtn) {
     clearBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      window.location.href = window.location.pathname; // 去掉所有参数
+      window.location.href = window.location.pathname;
     });
   }
 });
