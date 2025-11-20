@@ -1,13 +1,10 @@
-<button id="clear-filters"
-        style="
-            padding:6px 12px;
-            background:#e0e0e0;
-            border:1px solid #ccc;
-            border-radius:6px;
-            cursor:pointer;
-            margin-bottom:12px;">
+<div style="margin-bottom:12px;">
+<button id="clear-filters" style="padding:6px 12px;
+    background:#e0e0e0; border:1px solid #ccc;
+    border-radius:6px; cursor:pointer;">
     Clear filters
 </button>
+</div>
 
 # Papers: Document Retrieval
 
