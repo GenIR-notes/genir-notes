@@ -36,4 +36,11 @@ nav:
       - Roadmap: multimodal/roadmap.md
       - Papers: multimodal/papers.md
 
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - admonition
+  - pymdownx.details
 
+extra_javascript:
+  - https://unpkg.com/mermaid@10.9.0/dist/mermaid.min.js
