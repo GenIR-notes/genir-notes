@@ -15,7 +15,7 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 
 ## 🔷 A. ID Space & Indexing Innovations
 
-<div class="paper-entry" data-tags="title,MS MARCO Doc,contrastive learning,PQ">
+<div class="paper-entry" data-tags="title,MS MARCO Doc">
 
 **AAAAAAAAAAA (Tay et al. 2022)**  
 Tags: [title](?tag=title) · [MS MARCO Doc](?tag=MS%20MARCO%20Doc)
