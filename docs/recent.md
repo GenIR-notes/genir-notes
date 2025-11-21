@@ -1,17 +1,15 @@
 # 🕒 Recent Updates
 
-Below is a chronological list of the newest papers across  
+Below is a chronological list of all recently added or updated papers across  
 **Document Retrieval**, **Recommendation**, and **Multimodal Retrieval**.
-
-(Automatically sorted by `data-date`)
 
 ---
 
 <div style="display:none;">
 
-{% include "document_retrieval/papers.html" %}
-{% include "recommendation/papers.html" %}
-{% include "multimodal/papers.html" %}
+--8<-- "document_retrieval/papers.md"
+--8<-- "recommendation/papers.md"
+--8<-- "multimodal/papers.md"
 
 </div>
 
