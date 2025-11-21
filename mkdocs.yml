@@ -35,6 +35,7 @@ nav:
   - Multimodal Retrieval & Recommendation:
       - Roadmap: multimodal/roadmap.md
       - Papers: multimodal/papers.md
+  - Recent Updates: recent.md
 
 markdown_extensions:
   - pymdownx.superfences
