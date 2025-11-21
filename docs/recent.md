@@ -6,7 +6,11 @@ Below is a chronological list of all recently added or updated papers across
 
 <div style="display:none;">
 
-{% include-markdown "document_retrieval/papers.md" %}
+{%
+  include-markdown "document_retrieval/papers.md"
+  start="## 🔷 A. ID Space & Indexing Innovations"
+  end="## 🔷 B. Training Paradigms & Learning Signals"
+%}
 <!-- {% include-markdown "recommendation/papers.md" %} -->
 <!-- {% include-markdown "multimodal/papers.md" %} -->
 
