@@ -1,21 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // 找到隐藏容器，只处理这里面的 .paper-entry
+  const hiddenContainer = document.querySelector('div[style*="display:none"]');
+  if (!hiddenContainer) {
+    console.error("Hidden container for recent updates not found");
+    return;
+  }
 
-    // 抓取所有 paper-entry
-    const papers = Array.from(document.querySelectorAll(".paper-entry"));
+  const papers = Array.from(hiddenContainer.querySelectorAll(".paper-entry"));
+  console.log("Found hidden paper-entry count:", papers.length);
 
-    // 读取 data-date
-    const parsed = papers
-        .map(p => ({
-            element: p,
-            date: new Date(p.dataset.date || "1970-01-01")
-        }))
-        .sort((a, b) => b.date - a.date);  // 最新在前
+  // 解析每条的日期
+  const parsed = papers.map(p => ({
+    element: p,
+    date: new Date(p.dataset.date || "1970-01-01")
+  })).sort((a, b) => b.date - a.date);  // 最新在前
 
-    // 把排序后的 DOM 插入 recent-list
-    const container = document.getElementById("recent-list");
+  const container = document.getElementById("recent-list");
+  if (!container) {
+    console.error("Container #recent-list not found");
+    return;
+  }
 
-    parsed.forEach(p => {
-        const clone = p.element.cloneNode(true);
-        container.appendChild(clone);
-    });
+  // 插入排序后的条目
+  parsed.forEach(item => {
+    const clone = item.element.cloneNode(true);
+    clone.style.display = "";  // 确保显示
+    container.appendChild(clone);
+  });
 });
