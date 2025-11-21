@@ -5,9 +5,9 @@ Below is a chronological list of all recently added or updated papers across
 ---
 <div style="display:none;">
 
---8<-- "document_retrieval/papers.md"
---8<-- "recommendation/papers.md"
---8<-- "multimodal/papers.md"
+{% include-markdown "document_retrieval/papers.md" %}
+{% include-markdown "recommendation/papers.md" %}
+{% include-markdown "multimodal/papers.md" %}
 
 </div>
 
