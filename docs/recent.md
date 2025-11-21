@@ -7,11 +7,12 @@ Below is a chronological list of all recently added or updated papers across
 
 ---
 
-<!-- Include all paper pages (invisible, but DOM elements exist for JS) -->
 <div style="display:none;">
-{% include "document_retrieval/papers.md" %}
-{% include "recommendation/papers.md" %}
-{% include "multimodal/papers.md" %}
+
+--8<-- "document_retrieval/papers.md"
+--8<-- "recommendation/papers.md"
+--8<-- "multimodal/papers.md"
+
 </div>
 
 <!-- This container will display the sorted list -->
