@@ -13,4 +13,4 @@ Below is a chronological list of all recently added or updated papers across
 
 <div id="recent-list"></div>
 
-<script src="js/recent.js"></script>
+<script src="../js/recent.js"></script>
