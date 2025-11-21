@@ -7,11 +7,12 @@ Below is a chronological list of the newest papers across
 
 ---
 
-<!-- Load three paper pages invisibly (so DOM exists for JS) -->
 <div style="display:none;">
-    <iframe src="/document_retrieval/papers/" style="display:none;"></iframe>
-    <iframe src="/recommendation/papers/" style="display:none;"></iframe>
-    <iframe src="/multimodal/papers/" style="display:none;"></iframe>
+
+{% include "document_retrieval/papers.html" %}
+{% include "recommendation/papers.html" %}
+{% include "multimodal/papers.html" %}
+
 </div>
 
 <div id="recent-list"></div>
