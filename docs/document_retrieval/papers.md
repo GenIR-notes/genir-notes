@@ -9,38 +9,39 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
 
 ## 🔷 A. ID Space & Indexing Innovations
 
-<div class="paper-entry" data-tags="title,ms-marco-doc" data-date="2025-11-01">
+<div class="paper-entry" data-tags="title,ms-marco-doc" data-date="2025-11-01" data-source="document_retrieval">
 
 <p><strong>AAAAAAAAAA (Tay et al. 2022)</strong></p>
 
 <p>
 Tags:
-<a href="?tag=title">title</a> ·
-<a href="?tag=ms-marco-doc">MS MARCO Doc</a>
+<a class="paper-tag" data-tag="title">title</a>
+<a class="paper-tag" data-tag="ms-marco-doc">MS MARCO Doc</a>
 </p>
 
 </div>
 
-<div class="paper-entry" data-tags="title,nq" data-date="2025-11-18">
+<div class="paper-entry" data-tags="title,nq" data-date="2025-11-18" data-source="document_retrieval">
 
 <p><strong>BBBBBBBBB (Tay et al. 2022)</strong></p>
 
 <p>
 Tags:
-<a href="?tag=title">title</a> ·
-<a href="?tag=nq">NQ</a>
+<a class="paper-tag" data-tag="title">title</a>
+<a class="paper-tag" data-tag="nq">NQ</a>
+
 </p>
 
 </div>
 
-<div class="paper-entry" data-tags="title,ms-marco-doc" data-date="2025-11-21">
+<div class="paper-entry" data-tags="title,ms-marco-doc" data-date="2025-11-21" data-source="document_retrieval">
 
 <p><strong>CCCCCCCC (Tay et al. 2022)</strong></p>
 
 <p>
 Tags:
-<a href="?tag=title">title</a> ·
-<a href="?tag=ms-marco-doc">MS MARCO Doc</a>
+<a class="paper-tag" data-tag="title">title</a>
+<a class="paper-tag" data-tag="ms-marco-doc">MS MARCO Doc</a>
 </p>
 
 </div>
