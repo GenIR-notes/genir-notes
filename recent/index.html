@@ -789,6 +789,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recent Updates
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -805,6 +823,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#this-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔵 This Week
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#last-week" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟢 Last Week
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#earlier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🟡 Earlier
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -831,7 +901,7 @@
 <p>Below is a chronological list of all recently added or updated papers across<br />
 <strong>Document Retrieval</strong>, <strong>Recommendation</strong>, and <strong>Multimodal Retrieval</strong>.</p>
 <hr />
-<div style="display:none;">
+<!-- <div style="display:none;">
 
 
 
@@ -882,9 +952,23 @@ Tags:
 <!-- 
  -->
 
+<p></div> --&gt;</p>
+<!-- <div id="recent-list"></div> -->
+
+<div style="display:none;">
+--8<-- "document_retrieval/papers.md"
+--8<-- "recommendation/papers.md"
+--8<-- "multimodal/papers.md"
 </div>
 
-<div id="recent-list"></div>
+<h2 id="this-week">🔵 This Week</h2>
+<div id="recent-this-week"></div>
+
+<h2 id="last-week">🟢 Last Week</h2>
+<div id="recent-last-week"></div>
+
+<h2 id="earlier">🟡 Earlier</h2>
+<div id="recent-earlier"></div>
 
 <script src="../js/recent.js"></script>
 
