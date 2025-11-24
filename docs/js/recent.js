@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 避免重复执行
   if (window._recentInitialized) return;
   window._recentInitialized = true;
 
   const hiddenContainer = document.querySelector('div[style*="display:none"]');
   if (!hiddenContainer) {
-    console.error("Hidden container for recent updates not found");
+    console.error("Hidden container not found");
     return;
   }
 
@@ -14,37 +13,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const container = document.getElementById("recent-list");
   if (!container) {
-    console.error("Container #recent-list not found");
+    console.error("recent-list not found");
     return;
   }
   container.innerHTML = "";
 
+  // 解析并排序
   const parsed = papers
     .map(p => ({
-      element: p,
+      element: p.cloneNode(true),
       date: new Date(p.dataset.date || "1970-01-01")
     }))
     .sort((a, b) => b.date - a.date);
 
+  // ---- Week bucketing ----
+  const now = new Date();
+  const ONE_DAY = 24 * 60 * 60 * 1000;
+
+  const buckets = {
+    thisWeek: [],
+    lastWeek: [],
+    older: []
+  };
+
   parsed.forEach(item => {
-    const el = item.element.cloneNode(true);
-    el.style.display = "";
-    container.appendChild(el);
+    const diffDays = Math.floor((now - item.date) / ONE_DAY);
+
+    if (diffDays <= 7) {
+      buckets.thisWeek.push(item);
+    } else if (diffDays <= 14) {
+      buckets.lastWeek.push(item);
+    } else {
+      buckets.older.push(item);
+    }
   });
 
-  hiddenContainer.style.display = "none";
-});
+  // ---- Rendering function ----
+  function addSection(title, items) {
+    if (items.length === 0) return;
+    const h = document.createElement("h2");
+    h.textContent = title;
+    container.appendChild(h);
 
-document.addEventListener("click", e => {
-  if (e.target.classList.contains("paper-tag")) {
-    e.preventDefault();
-    const tag = e.target.dataset.tag;
-    const entry = e.target.closest(".paper-entry");
-    const source = entry.dataset.source;
-
-    // 构造跳转 URL
-    let targetURL = `/genir-notes/${source}/papers/?tag=${tag}`;
-
-    window.location.href = targetURL;
+    items.forEach(it => {
+      it.element.style.display = "";
+      container.appendChild(it.element);
+    });
   }
+
+  addSection("🟦 This week", buckets.thisWeek);
+  addSection("🟩 Last week", buckets.lastWeek);
+  addSection("⬜ Older", buckets.older);
+
+  hiddenContainer.style.display = "none";
 });
