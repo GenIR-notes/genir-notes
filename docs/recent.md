@@ -4,8 +4,7 @@ Below is a chronological list of all recently added or updated papers across
 **Document Retrieval**, **Recommendation**, and **Multimodal Retrieval**.
 ---
 
-<div style="display:none;">
-
+<div id="recent-source" style="display:none;">
 {%
   include-markdown "document_retrieval/papers.md"
   start="## 🔷 A. ID Space & Indexing Innovations"
@@ -16,13 +15,6 @@ Below is a chronological list of all recently added or updated papers across
 
 </div>
 
-<!-- <div id="recent-list"></div> -->
-
-<!-- <div style="display:none;">
---8<-- "document_retrieval/papers.md"
---8<-- "recommendation/papers.md"
---8<-- "multimodal/papers.md"
-</div> -->
 
 ## 🔴 This Week
 <div id="recent-this-week"></div>
