@@ -1,62 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // 防止重复执行
-  if (window._recentInitialized) return;
-  window._recentInitialized = true;
-
+  // ---- 1. 找到隐藏容器 ----
   const hiddenContainer = document.querySelector('div[style*="display:none"]');
-  if (!hiddenContainer) return;
+  if (!hiddenContainer) {
+    console.error("Hidden container not found");
+    return;
+  }
 
+  // ---- 2. 收集全部 paper-entry ----
   const papers = Array.from(hiddenContainer.querySelectorAll(".paper-entry"));
+  console.log("Total papers found:", papers.length);
 
-  // 解析日期
-  const parsed = papers.map(p => ({
-      element: p.cloneNode(true),
+  // ---- 3. 准备三个目标区域 ----
+  const thisWeekContainer = document.getElementById("recent-this-week");
+  const lastWeekContainer = document.getElementById("recent-last-week");
+  const earlierContainer = document.getElementById("recent-earlier");
+
+  // 防御：如果容器不存在就报错
+  if (!thisWeekContainer || !lastWeekContainer || !earlierContainer) {
+    console.error("Recent containers missing");
+    return;
+  }
+
+  // ---- 4. 计算当前时间、周起点 ----
+  const today = new Date();
+  const currentWeekDay = today.getDay(); // 0=Sunday
+  const diffToMonday = (currentWeekDay + 6) % 7; // 将周一视为一周的开始
+  const mondayThisWeek = new Date(today);
+  mondayThisWeek.setDate(today.getDate() - diffToMonday);
+
+  const mondayLastWeek = new Date(mondayThisWeek);
+  mondayLastWeek.setDate(mondayThisWeek.getDate() - 7);
+
+  console.log("This week starts:", mondayThisWeek);
+  console.log("Last week starts:", mondayLastWeek);
+
+  // ---- 5. 解析日期并排序 ----
+  const parsed = papers
+    .map(p => ({
+      element: p.cloneNode(true),   // clone 节点，避免移动源节点
       date: new Date(p.dataset.date || "1970-01-01")
-  })).sort((a, b) => b.date - a.date);
+    }))
+    .sort((a, b) => b.date - a.date);   // 最新排前
 
-  // 获取各列表容器
-  const listThisWeek = document.getElementById("recent-this-week");
-  const listLastWeek = document.getElementById("recent-last-week");
-  const listEarlier = document.getElementById("recent-earlier");
-
-  const now = new Date();
-  const currentWeek = getWeekNumber(now);
-  const currentYear = now.getFullYear();
-
+  // ---- 6. 将论文分配到不同区间 ----
   parsed.forEach(item => {
-    const el = item.element;
-    el.style.display = "";
+    const d = item.date;
+    item.element.style.display = ""; // 显示节点
 
-    const itemWeek = getWeekNumber(item.date);
-    const itemYear = item.date.getFullYear();
-
-    if (itemYear === currentYear && itemWeek === currentWeek) {
-      // 本周
-      listThisWeek.appendChild(el);
-    } else if (itemYear === currentYear && itemWeek === currentWeek - 1) {
-      // 上一周
-      listLastWeek.appendChild(el);
+    if (d >= mondayThisWeek) {
+      thisWeekContainer.appendChild(item.element);
+    } else if (d >= mondayLastWeek) {
+      lastWeekContainer.appendChild(item.element);
     } else {
-      // 更早
-      listEarlier.appendChild(el);
+      earlierContainer.appendChild(item.element);
     }
-
-    // recent 页面中，点击 tag 会跳转到 doc retrieval 的 papers 页面进行过滤
-    const tagLinks = el.querySelectorAll("a[href^='?tag=']");
-    tagLinks.forEach(a => {
-      const tag = a.getAttribute("href").replace("?tag=", "").trim();
-      a.setAttribute("href", "/genir-notes/document_retrieval/papers/?tag=" + tag);
-    });
   });
 });
-
-
-// --- WEEK NUMBER FUNCTION ---
-function getWeekNumber(d) {
-  const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-  const dayNum = date.getUTCDay() || 7;
-  date.setUTCDate(date.getUTCDate() + 4 - dayNum);
-  const yearStart = new Date(Date.UTC(date.getUTCFullYear(),0,1));
-  return Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
-}
