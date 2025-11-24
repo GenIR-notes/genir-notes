@@ -24,7 +24,7 @@ Below is a chronological list of all recently added or updated papers across
 --8<-- "multimodal/papers.md"
 </div>
 
-## 🔵 This Week
+## 🔴 This Week
 <div id="recent-this-week"></div>
 
 ## 🟢 Last Week
