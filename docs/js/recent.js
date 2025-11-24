@@ -34,3 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   hiddenContainer.style.display = "none";
 });
+
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("paper-tag")) {
+    e.preventDefault();
+    const tag = e.target.dataset.tag;
+    const entry = e.target.closest(".paper-entry");
+    const source = entry.dataset.source;
+
+    // 构造跳转 URL
+    let targetURL = `/genir-notes/${source}/papers/?tag=${tag}`;
+
+    window.location.href = targetURL;
+  }
+});
