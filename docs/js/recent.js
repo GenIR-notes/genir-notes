@@ -1,69 +1,62 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // 防止重复执行
   if (window._recentInitialized) return;
   window._recentInitialized = true;
 
   const hiddenContainer = document.querySelector('div[style*="display:none"]');
-  if (!hiddenContainer) {
-    console.error("Hidden container not found");
-    return;
-  }
+  if (!hiddenContainer) return;
 
   const papers = Array.from(hiddenContainer.querySelectorAll(".paper-entry"));
-  console.log("Hidden paper-entry count:", papers.length);
 
-  const container = document.getElementById("recent-list");
-  if (!container) {
-    console.error("recent-list not found");
-    return;
-  }
-  container.innerHTML = "";
-
-  // 解析并排序
-  const parsed = papers
-    .map(p => ({
+  // 解析日期
+  const parsed = papers.map(p => ({
       element: p.cloneNode(true),
       date: new Date(p.dataset.date || "1970-01-01")
-    }))
-    .sort((a, b) => b.date - a.date);
+  })).sort((a, b) => b.date - a.date);
 
-  // ---- Week bucketing ----
+  // 获取各列表容器
+  const listThisWeek = document.getElementById("recent-this-week");
+  const listLastWeek = document.getElementById("recent-last-week");
+  const listEarlier = document.getElementById("recent-earlier");
+
   const now = new Date();
-  const ONE_DAY = 24 * 60 * 60 * 1000;
-
-  const buckets = {
-    thisWeek: [],
-    lastWeek: [],
-    older: []
-  };
+  const currentWeek = getWeekNumber(now);
+  const currentYear = now.getFullYear();
 
   parsed.forEach(item => {
-    const diffDays = Math.floor((now - item.date) / ONE_DAY);
+    const el = item.element;
+    el.style.display = "";
 
-    if (diffDays <= 7) {
-      buckets.thisWeek.push(item);
-    } else if (diffDays <= 14) {
-      buckets.lastWeek.push(item);
+    const itemWeek = getWeekNumber(item.date);
+    const itemYear = item.date.getFullYear();
+
+    if (itemYear === currentYear && itemWeek === currentWeek) {
+      // 本周
+      listThisWeek.appendChild(el);
+    } else if (itemYear === currentYear && itemWeek === currentWeek - 1) {
+      // 上一周
+      listLastWeek.appendChild(el);
     } else {
-      buckets.older.push(item);
+      // 更早
+      listEarlier.appendChild(el);
     }
-  });
 
-  // ---- Rendering function ----
-  function addSection(title, items) {
-    if (items.length === 0) return;
-    const h = document.createElement("h2");
-    h.textContent = title;
-    container.appendChild(h);
-
-    items.forEach(it => {
-      it.element.style.display = "";
-      container.appendChild(it.element);
+    // recent 页面中，点击 tag 会跳转到 doc retrieval 的 papers 页面进行过滤
+    const tagLinks = el.querySelectorAll("a[href^='?tag=']");
+    tagLinks.forEach(a => {
+      const tag = a.getAttribute("href").replace("?tag=", "").trim();
+      a.setAttribute("href", "/genir-notes/document_retrieval/papers/?tag=" + tag);
     });
-  }
-
-  addSection("🟦 This week", buckets.thisWeek);
-  addSection("🟩 Last week", buckets.lastWeek);
-  addSection("⬜ Older", buckets.older);
-
-  hiddenContainer.style.display = "none";
+  });
 });
+
+
+// --- WEEK NUMBER FUNCTION ---
+function getWeekNumber(d) {
+  const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const dayNum = date.getUTCDay() || 7;
+  date.setUTCDate(date.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(date.getUTCFullYear(),0,1));
+  return Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+}
