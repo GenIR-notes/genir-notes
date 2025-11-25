@@ -1,51 +1,57 @@
 <script>
+// docs/js/papers-filter.js
 document.addEventListener("DOMContentLoaded", () => {
-  // 防止重复执行
-  if (window._recentInitialized) return;
-  window._recentInitialized = true;
+  if (window._papersFilterInitialized) return;
+  window._papersFilterInitialized = true;
 
-  const hiddenContainer = document.querySelector('div[style*="display:none"]');
-  if (!hiddenContainer) {
-    console.error("Hidden container for recent updates not found");
-    return;
-  }
-
-  const papers = Array.from(hiddenContainer.querySelectorAll(".paper-entry"));
-  console.log("Hidden paper-entry count:", papers.length);
-
-  const container = document.getElementById("recent-list");
-  if (!container) {
-    console.error("Container #recent-list not found");
-    return;
-  }
-  container.innerHTML = "";
-
-  const parsed = papers.map(p => ({
-    element: p.cloneNode(true),
-    date: new Date(p.dataset.date || "1970-01-01"),
-    source: p.dataset.source || ""
-  })).sort((a, b) => b.date - a.date);
-
-  parsed.forEach(item => {
-    const el = item.element;
-    el.style.display = "";
-
-    // 处理 tag 链接逻辑
-    const tagLinks = el.querySelectorAll("a.paper-tag");
-    tagLinks.forEach(a => {
+  // 点击 Tag 跳转逻辑
+  document.body.addEventListener("click", e => {
+    const a = e.target;
+    if (a.matches("a.paper-tag")) {
+      e.preventDefault();
       const tag = a.getAttribute("data-tag");
-      if (!tag) return;
-      // 构造跳转 URL（替换为你自己的仓库路径）
-      const targetURL = `/genir-notes/${item.source}/papers/?tag=${encodeURIComponent(tag)}`;
-      a.setAttribute("href", targetURL);
-      a.setAttribute("target", "_blank");
-    });
+      const entry = a.closest(".paper-entry");
+      const source = entry ? entry.getAttribute("data-source") : "";
+      if (!tag || !source) return;
 
-    container.appendChild(el);
+      const targetURL = `/genir-notes/${source}/papers/?tag=${encodeURIComponent(tag)}`;
+      window.location.href = targetURL;
+    }
   });
 
-  // 隐藏原 container 避免展示
-  hiddenContainer.style.display = "none";
+  // 设置 href 自动化
+  document.querySelectorAll("a.paper-tag").forEach(a => {
+    const tag = a.getAttribute("data-tag");
+    const entry = a.closest(".paper-entry");
+    const source = entry ? entry.getAttribute("data-source") : "";
+    if (!tag || !source) return;
+    a.setAttribute("href", `/genir-notes/${source}/papers/?tag=${encodeURIComponent(tag)}`);
+    a.setAttribute("target", "_blank");
+  });
+
+  // 处理 ?tag=xxx 参数过滤逻辑
+  const params = new URLSearchParams(window.location.search);
+  const selectedTag = params.get("tag");
+  if (selectedTag) {
+    const papers = document.querySelectorAll(".paper-entry");
+    papers.forEach(p => {
+      const tags = (p.getAttribute("data-tags") || "").toLowerCase().split(",");
+      if (!tags.includes(selectedTag.toLowerCase().trim())) {
+        p.style.display = "none";
+      } else {
+        p.style.display = "";
+      }
+    });
+
+    const clearBtn = document.getElementById("clear-filters");
+    if (clearBtn) {
+      clearBtn.style.display = "";
+      clearBtn.addEventListener("click", e => {
+        e.preventDefault();
+        window.location.href = window.location.pathname;
+      });
+    }
+  }
 });
 </script>
 
