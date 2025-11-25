@@ -58,6 +58,7 @@ extra_javascript:
   - js/mermaid-init.js
   - js/filter-tags.js
   - js/recent.js
+  - js/paper-process.js
 
 extra_css:
   - css/extra.css
