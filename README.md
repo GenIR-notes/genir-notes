@@ -4,11 +4,11 @@
 ### ✅ Instructions for Adding New Papers & Updating Roadmaps
 
 Hi!
-This document explains how to correctly add new papers to the GenIR Notes website and how to edit the roadmap diagrams.
+This following explains how to correctly add new papers to the GenIR Notes website and how to edit the roadmap diagrams.
 
 #### 1. 📄 Writing a Paper Entry
 
-Each paper must follow the exact HTML structure below.
+Each paper should follow the exact HTML structure below.
 
 ```
 <div class="paper-entry"
@@ -105,16 +105,17 @@ If unsure, you may ask ChatGPT: “Rewrite this node in valid Mermaid format” 
 #### 3. ⭐ Summary: What you should follow
 
 ✔️ DO:
-	- Follow the exact Paper Entry template
-	- Use lowercase tags, comma-separated
-	- Use valid ISO dates
-	- Set correct data-source
-	- Keep tag <a> elements consistent
-	- Maintain the script import at the bottom of each papers.md
-	- Follow Mermaid syntax for the roadmap
+
+- Follow the exact Paper Entry template
+- Use lowercase tags, comma-separated
+- Use valid ISO dates
+- Set correct data-source
+- Keep tag <a> elements consistent
+- Maintain the script import at the bottom of each papers.md
+- Follow Mermaid syntax for the roadmap
 
 
-8. If You Have Questions
+##### If You Have Questions
 
 Just message Yubao — small mistakes can break the filtering system, so it’s better to ask!
 
