@@ -35,8 +35,8 @@ Each paper should follow the exact HTML structure below.
 
 ##### File path: 
 - docs/document_retrieval/papers.md
-- docs/document_retrieval/papers.md
-- docs/document_retrieval/papers.md
+- docs/recommendation/papers.md
+- docs/multimodal/papers.md
 
 
 ##### Rules for data-tags
