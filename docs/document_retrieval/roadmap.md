@@ -19,16 +19,16 @@ flowchart LR
     A --> A2["Word-based docid"]
 
     %% Number-based docids breakdown
-    A1 --> A1a["Unstructured atomic integers<br>(Tay et al. 2022)"]
-    A1 --> A1b["Naively structured strings<br>(Tay et al. 2022)"]
-    A1 --> A1c["Semantically structured strings<br>(Tay et al. 2022)"]
-    A1 --> A1d["Product quantization strings<br>(Zhou et al. 2022)"]
+    A1 --> A1a["Unstructured atomic integers <br> (Tay et al. 2022) <br> [PDF](https://arxiv.org/pdf/2202.06991)"]
+    A1 --> A1b["Naively structured strings <br> (Tay et al. 2022) <br> [PDF](https://arxiv.org/pdf/2202.06991)"]
+    A1 --> A1c["Semantically structured strings <br> (Tay et al. 2022) <br> [PDF](https://arxiv.org/pdf/2202.06991)"]
+    A1 --> A1d["Product quantization strings <br> (Zhou et al. 2022) <br> [PDF](https://arxiv.org/pdf/2208.09257)"]
 
     %% Word-based docids breakdown
-    A2 --> A2a["Titles<br>(De Cao et al. 2021)"]
-    A2 --> A2b["URLs<br>(Zhou et al. 2022)"]
-    A2 --> A2c["Pseudo queries<br>(Tang et al. 2023a)"]
-    A2 --> A2d["Important terms<br>(Zhang et al. 2023)"]
+    A2 --> A2a["Titles <br> (De Cao et al. 2021) <br> [PDF](https://arxiv.org/pdf/2010.00904)"]
+    A2 --> A2b["URLs <br> (Zhou et al. 2022) <br> [PDF](https://arxiv.org/pdf/2208.09257)"]
+    A2 --> A2c["Pseudo queries <br> (Tang et al. 2023a) <br> [PDF](https://arxiv.org/pdf/2305.15115)"]
+    A2 --> A2d["N-grams <br> (Bevilacqua et al. 2022) <br> [PDF](https://arxiv.org/pdf/2204.10628)"]
 
     %% Single → Multiple
     A --> B
