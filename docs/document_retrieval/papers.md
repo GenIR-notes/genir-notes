@@ -75,4 +75,4 @@ Tags:
 ## 🔷 D. Decoding & Inference Innovations
 
 
-<script src="../../js/papers-process.js"></script>
+<script src="../js/papers-process.js"></script>
