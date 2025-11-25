@@ -77,50 +77,52 @@ Tags:
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* ----------- 自动为每个 tag 添加 href="?tag=xxx" ----------- */
-  const tagLinks = document.querySelectorAll(".paper-tag");
-  tagLinks.forEach(a => {
-    const tag = a.dataset.tag;
-    if (tag) {
-      a.href = "?tag=" + encodeURIComponent(tag);
-    }
-  });
-
-  /* ----------- 过滤逻辑 ----------- */
   const params = new URLSearchParams(window.location.search);
-  const selectedTag = params.get("tag");
+  const selectedTagRaw = params.get("tag") || "";
+  const selectedTag = selectedTagRaw.toLowerCase().trim();
 
   const papers = document.querySelectorAll(".paper-entry");
 
+  // 1) 按 tag 过滤
   if (selectedTag) {
     papers.forEach(p => {
-      const tags = p.dataset.tags.toLowerCase();
-      if (!tags.includes(selectedTag.toLowerCase())) {
-        p.style.display = "none";
+      const tagStr = (p.dataset.tags || "").toLowerCase();
+      const tags = tagStr
+        .split(",")
+        .map(t => t.trim())
+        .filter(Boolean);
+
+      if (tags.includes(selectedTag)) {
+        p.style.display = "";
       } else {
-        p.style.display = "block";
+        p.style.display = "none";
       }
     });
-
-    // 显示 Clear Filters 按钮
-    const clearBtn = document.getElementById("clear-filters");
-    if (clearBtn) clearBtn.style.display = "block";
-
   } else {
-    // 没选 tag 则全部展示
-    papers.forEach(p => p.style.display = "block");
-  }
-
-
-  /* ----------- 清除过滤逻辑 ----------- */
-  const clear = document.querySelector("#clear-filters");
-  if (clear) {
-    clear.addEventListener("click", () => {
-      window.location.href = window.location.pathname;
+    // 没有 tag，全部显示
+    papers.forEach(p => {
+      p.style.display = "";
     });
   }
 
+  // 2) 控制 Clear Filters 按钮的显示/隐藏 + 点击逻辑
+  const clearBtn = document.getElementById("clear-filters");
+  if (clearBtn) {
+    if (selectedTag) {
+      // 有 tag 的时候才显示按钮
+      clearBtn.style.display = "block";
+    } else {
+      clearBtn.style.display = "none";
+    }
+
+    clearBtn.addEventListener("click", e => {
+      e.preventDefault();
+      // 去掉 ?tag=... 参数，回到当前页面的“无过滤”状态
+      const url = new URL(window.location.href);
+      url.searchParams.delete("tag");
+      window.location.href = url.pathname;
+    });
+  }
 });
 </script>
 
