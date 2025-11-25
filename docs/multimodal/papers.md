@@ -1,6 +1,6 @@
 
 ### paper entry template
-<div class="paper-entry" data-tags="title,ms-marco-doc" data-date="2025-11-01" data-source="recommendation">
+<div class="paper-entry" data-tags="title,ms-marco-doc" data-date="2025-11-01" data-source="multimodal">
  <p>
     <strong>AAAAAAAAAA (Tay et al. 2022)</strong>
     <span class="links">
