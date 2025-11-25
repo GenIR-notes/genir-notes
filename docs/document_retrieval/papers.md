@@ -77,52 +77,52 @@ Tags:
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const selectedTagRaw = params.get("tag") || "";
-  const selectedTag = selectedTagRaw.toLowerCase().trim();
+  // 防止重复执行
+  if (window._recentInitialized) return;
+  window._recentInitialized = true;
 
-  const papers = document.querySelectorAll(".paper-entry");
-
-  // 1) 按 tag 过滤
-  if (selectedTag) {
-    papers.forEach(p => {
-      const tagStr = (p.dataset.tags || "").toLowerCase();
-      const tags = tagStr
-        .split(",")
-        .map(t => t.trim())
-        .filter(Boolean);
-
-      if (tags.includes(selectedTag)) {
-        p.style.display = "";
-      } else {
-        p.style.display = "none";
-      }
-    });
-  } else {
-    // 没有 tag，全部显示
-    papers.forEach(p => {
-      p.style.display = "";
-    });
+  const hiddenContainer = document.querySelector('div[style*="display:none"]');
+  if (!hiddenContainer) {
+    console.error("Hidden container for recent updates not found");
+    return;
   }
 
-  // 2) 控制 Clear Filters 按钮的显示/隐藏 + 点击逻辑
-  const clearBtn = document.getElementById("clear-filters");
-  if (clearBtn) {
-    if (selectedTag) {
-      // 有 tag 的时候才显示按钮
-      clearBtn.style.display = "block";
-    } else {
-      clearBtn.style.display = "none";
-    }
+  const papers = Array.from(hiddenContainer.querySelectorAll(".paper-entry"));
+  console.log("Hidden paper-entry count:", papers.length);
 
-    clearBtn.addEventListener("click", e => {
-      e.preventDefault();
-      // 去掉 ?tag=... 参数，回到当前页面的“无过滤”状态
-      const url = new URL(window.location.href);
-      url.searchParams.delete("tag");
-      window.location.href = url.pathname;
-    });
+  const container = document.getElementById("recent-list");
+  if (!container) {
+    console.error("Container #recent-list not found");
+    return;
   }
+  container.innerHTML = "";
+
+  const parsed = papers.map(p => ({
+    element: p.cloneNode(true),
+    date: new Date(p.dataset.date || "1970-01-01"),
+    source: p.dataset.source || ""
+  })).sort((a, b) => b.date - a.date);
+
+  parsed.forEach(item => {
+    const el = item.element;
+    el.style.display = "";
+
+    // 处理 tag 链接逻辑
+    const tagLinks = el.querySelectorAll("a.paper-tag");
+    tagLinks.forEach(a => {
+      const tag = a.getAttribute("data-tag");
+      if (!tag) return;
+      // 构造跳转 URL（替换为你自己的仓库路径）
+      const targetURL = `/genir-notes/${item.source}/papers/?tag=${encodeURIComponent(tag)}`;
+      a.setAttribute("href", targetURL);
+      a.setAttribute("target", "_blank");
+    });
+
+    container.appendChild(el);
+  });
+
+  // 隐藏原 container 避免展示
+  hiddenContainer.style.display = "none";
 });
 </script>
 
