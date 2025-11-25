@@ -1,11 +1,21 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  updateFiltering();
+  window.addEventListener("popstate", updateFiltering);
+});
+
+function updateFiltering() {
   const params = new URLSearchParams(window.location.search);
   const selectedTag = params.get("tag");
 
   const papers = document.querySelectorAll(".paper-entry");
+  const clearBtn = document.getElementById("clear-filters");
+
+  if (!clearBtn) return;
 
   if (selectedTag) {
+    clearBtn.style.display = "block";   // ★★ 点击任何 tag 都会出现按钮
+
     papers.forEach(p => {
       const tags = p.dataset.tags.toLowerCase();
       if (!tags.includes(selectedTag.toLowerCase())) {
@@ -14,16 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
         p.style.display = "block";
       }
     });
-  }
 
-  // Clear filters
-  const clear = document.querySelector("#clear-filters");
-  if (clear) {
-    clear.addEventListener("click", () => {
-      window.location.href = window.location.pathname;
-    });
+  } else {
+    clearBtn.style.display = "none";   // 没 tag → 隐藏按钮
+    papers.forEach(p => (p.style.display = "block"));
   }
-});
+}
 </script>
 
 <button id="clear-filters" class="floating-clear-btn" style="display: none;">
