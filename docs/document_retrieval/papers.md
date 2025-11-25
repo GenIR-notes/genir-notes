@@ -21,7 +21,6 @@ To keep the page compact, each paper is listed using lightweight formatting (bol
   <p>
     Tags:
    <a class="paper-tag" data-tag="title" href="?tag=title">title</a>
-    <a class="paper-tag" data-tag="title">title</a>
   <a class="paper-tag" data-tag="ms-marco-doc" href="?tag=ms-marco-doc">MS MARCO Doc</a>
   </p>
 </div>
