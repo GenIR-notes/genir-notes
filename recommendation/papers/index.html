@@ -67,6 +67,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#paper-entry-template" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -635,6 +640,24 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Papers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -651,6 +674,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paper-entry-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        paper entry template
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -827,7 +878,25 @@
 
   <h1>Papers</h1>
 
+<h3 id="paper-entry-template">paper entry template</h3>
+<div class="paper-entry" data-tags="title,ms-marco-doc" data-date="2025-11-01" data-source="recommendation">
+ <p>
+    <strong>AAAAAAAAAA (Tay et al. 2022)</strong>
+    <span class="links">
+      [<a href="https://arxiv.org/pdf/xxxx.xxxxx" target="_blank">PDF</a>]
+      [<a href="https://github.com/...">Code</a>]
+    </span>
+  </p>
 
+  <p>
+    Tags:
+   <a class="paper-tag" data-tag="title" href="?tag=title">title</a>
+  <a class="paper-tag" data-tag="ms-marco-doc" href="?tag=ms-marco-doc">MS MARCO Doc</a>
+  </p>
+</div>
+
+<!-- Please do NOT modify the code block below. -->
+<script src="../js/papers-process.js"></script>
 
 
 
