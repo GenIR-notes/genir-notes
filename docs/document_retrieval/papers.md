@@ -77,21 +77,22 @@ Tags:
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* ----------- 自动为每个 tag 添加 href="?tag=xxx" ----------- */
+  const tagLinks = document.querySelectorAll(".paper-tag");
+  tagLinks.forEach(a => {
+    const tag = a.dataset.tag;
+    if (tag) {
+      a.href = "?tag=" + encodeURIComponent(tag);
+    }
+  });
+
+  /* ----------- 过滤逻辑 ----------- */
   const params = new URLSearchParams(window.location.search);
   const selectedTag = params.get("tag");
 
   const papers = document.querySelectorAll(".paper-entry");
 
-  /* ----------- 自动为 tag 生成 href ----------- */
-  const tagLinks = document.querySelectorAll(".paper-tag");
-  tagLinks.forEach(a => {
-    const tag = a.dataset.tag; // 直接读取 data-tag
-    if (tag) {
-      a.href = `?tag=${tag}`;  // 自动插入 href
-    }
-  });
-
-  /* ----------- tag filtering 逻辑 ----------- */
   if (selectedTag) {
     papers.forEach(p => {
       const tags = p.dataset.tags.toLowerCase();
@@ -101,14 +102,49 @@ document.addEventListener("DOMContentLoaded", () => {
         p.style.display = "block";
       }
     });
+
+    // 显示 Clear Filters 按钮
+    const clearBtn = document.getElementById("clear-filters");
+    if (clearBtn) clearBtn.style.display = "block";
+
+  } else {
+    // 没选 tag 则全部展示
+    papers.forEach(p => p.style.display = "block");
   }
 
-  /* ----------- Clear filter 按钮 ----------- */
+
+  /* ----------- 清除过滤逻辑 ----------- */
   const clear = document.querySelector("#clear-filters");
   if (clear) {
     clear.addEventListener("click", () => {
       window.location.href = window.location.pathname;
     });
   }
+
 });
 </script>
+
+<!-- Floating Button -->
+<button id="clear-filters" class="floating-clear-btn" style="display: none;">
+  Clear Filters ✖
+</button>
+
+<style>
+.floating-clear-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 9999;
+}
+.floating-clear-btn:hover {
+    background-color: #303f9f;
+}
+</style>
